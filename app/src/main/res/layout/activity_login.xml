@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/splashscreen"
+    tools:context=".Screens.Login.LoginActivity">
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:src="@drawable/icon"
+    android:layout_marginTop="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GET IT"
+        android:textSize="20sp"
+        android:textColor="#2F85FF"
+        android:layout_gravity="center"
+        android:fontFamily="@font/robotoregular"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:textSize="20sp"
+        android:textColor="#2F85FF"
+        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/robotoregular"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/et_email_loginScreen"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_shape"
+        android:hint="Email"
+        android:padding="10dp"
+        android:fontFamily="@font/robotoregular"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/et_pass_loginScreen"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edittext_shape"
+        android:hint="Mật khẩu"
+        android:padding="10dp"
+        android:fontFamily="@font/robotoregular"/>
+
+    <CheckBox
+        android:id="@+id/cb_remember_loginScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:button="@drawable/checkbox_shape"
+        android:text="Lưu tài khoản" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_forgotPass_loginScreen"
+        android:text="Forgot password ?"
+        android:textColor="#2F85FF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/btn_loginScreen"
+        android:layout_margin="15dp"
+        android:background="@drawable/button_shape"
+        android:text="đăng nhập"
+        android:textSize="20sp"
+        android:textColor="#ffffff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+      android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa có tài khoản ?"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotoregular"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_loginHere_loginScreen"
+            android:text=" - Đăng kí tại đây"
+            android:textColor="#2F85FF"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotoregular"/>
+    </LinearLayout>
+
+
+</LinearLayout>

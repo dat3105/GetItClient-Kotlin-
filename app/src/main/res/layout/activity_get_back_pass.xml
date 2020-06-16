@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/splashscreen"
+    tools:context=".Screens.GetBackPassword.GetBackPassActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imv_back_getBack"
+            android:src="@drawable/icon_back"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="15dp"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:src="@drawable/icon"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp"
+           />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GET IT"
+        android:textSize="11sp"
+        android:textColor="#2F85FF"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lấy lại mật khẩu"
+        android:textSize="20sp"
+        android:textColor="#2F85FF"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/et_email_getBackScreen"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_shape"
+        android:hint="Email"
+        android:padding="10dp"
+        android:fontFamily="@font/robotoregular"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/et_phoneNumber_getBackScreen"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edittext_shape"
+        android:hint="Số điện thoại"
+        android:padding="10dp"
+        android:fontFamily="@font/robotoregular"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/btn_register_registerScreen"
+        android:layout_margin="15dp"
+        android:background="@drawable/button_shape"
+        android:text="Xác nhận"
+        android:textSize="20sp"
+        android:textColor="#ffffff"/>
+</LinearLayout>
