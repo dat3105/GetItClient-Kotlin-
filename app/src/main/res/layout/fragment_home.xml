@@ -38,7 +38,7 @@
             android:id="@+id/cardview_slider_homeScreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginHorizontal="15dp"
             app:cardCornerRadius="7dp">
 
             <com.smarteist.autoimageslider.SliderView
@@ -60,178 +60,13 @@
 
         </androidx.cardview.widget.CardView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginHorizontal="15dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reclerView_itemBrandName_homeScreen"
+        android:layout_margin="15dp"
+      />
 
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:id="@+id/linear_laptopHP"
-                android:layout_width="100dp"
-                android:layout_height="73dp"
-                android:background="@drawable/button_menu_shape"
-               >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/hp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="5dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                  android:layout_marginBottom="12dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Laptop HP"
-                    android:textColor="#000000"
-                    android:textSize="10dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/linear_laptopAcer"
-                android:layout_width="100dp"
-                android:layout_height="73dp"
-                android:background="@drawable/button_menu_shape"
-                android:layout_centerInParent="true"
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/acer"
-                    android:layout_centerHorizontal="true"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Laptop ACER"
-                    android:textColor="#000000"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="12dp"
-                    android:textSize="10dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/linear_laptopDell"
-                android:layout_width="100dp"
-                android:layout_height="73dp"
-                android:background="@drawable/button_menu_shape"
-                android:layout_alignParentRight="true"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/dell"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Laptop DELL"
-                    android:textSize="10dp"
-                    android:textColor="#000000"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="12dp"
-                    android:fontFamily="@font/robotoregular"/>
-            </RelativeLayout>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginHorizontal="15dp"
-
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:id="@+id/linear_laptopLenovo"
-                android:layout_width="100dp"
-                android:layout_height="73dp"
-                android:background="@drawable/button_menu_shape"
-               >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/lenovo"
-                   android:layout_centerHorizontal="true"
-                    android:layout_marginTop="7dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Laptop LONOVO"
-                    android:textSize="10dp"
-                    android:textColor="#000000"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/robotoregular"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="12dp"
-                    />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/linear_laptopAsus"
-                android:layout_width="100dp"
-                android:layout_height="73dp"
-                android:background="@drawable/button_menu_shape"
-                android:layout_centerInParent="true"
-               >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/asus"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="3dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Laptop ASUS"
-                    android:textSize="10dp"
-                    android:textColor="#000000"
-                   android:layout_centerHorizontal="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="12dp"
-                    android:fontFamily="@font/robotoregular"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/linear_laptopMac"
-                android:layout_width="100dp"
-                android:layout_height="73dp"
-                android:background="@drawable/button_menu_shape"
-                android:layout_alignParentRight="true"
-                    >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/mac"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="11dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Laptop MAC"
-                    android:textSize="10dp"
-                    android:textColor="#000000"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="12dp"
-                    android:fontFamily="@font/robotoregular"/>
-            </RelativeLayout>
-
-        </RelativeLayout>
 
 <TextView
     android:layout_width="140dp"
@@ -244,6 +79,7 @@
     android:textSize="12sp"
     android:fontFamily="@font/robotoregular"/>
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_margin="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/reclerView_itemHot_homeScreen"/>
