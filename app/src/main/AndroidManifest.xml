@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Screens.GetBackPassword.GetBackPassActivity"></activity>
+        <activity android:name=".Screens.Cart.CartActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Screens.GetBackPassword.GetBackPassActivity" />
         <activity android:name=".Screens.Register.RegisterActivity" />
         <activity android:name=".Screens.Login.LoginActivity" />
         <activity android:name=".Screens.Splash.SplashActivity">

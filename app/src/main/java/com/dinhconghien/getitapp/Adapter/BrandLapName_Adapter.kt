@@ -18,7 +18,7 @@ class BrandLapName_Adapter(val context: Context , val listBrandLapName : ArrayLi
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val inflate: View = LayoutInflater.from(parent!!.context).inflate(R.layout.item_brandlaptop, null)
+        val inflate: View = LayoutInflater.from(parent.context).inflate(R.layout.item_brandlaptop, null)
         return ViewHolder(inflate)
     }
 
@@ -27,7 +27,7 @@ class BrandLapName_Adapter(val context: Context , val listBrandLapName : ArrayLi
         return listBrandLapName.size
     }
 
-    override fun onBindViewHolder(holder: BrandLapName_Adapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
          val brandLap = listBrandLapName.get(position)
          holder.tv_brandNameLap.text = brandLap.brandLapName
          Glide.with(holder.itemView)

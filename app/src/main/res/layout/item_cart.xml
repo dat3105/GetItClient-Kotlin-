@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="7dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="10dp"
+      >
+        <ImageView
+            android:id="@+id/imv_avatarCart_cartItem"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_weight="5"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/avatarlaptop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nameLapTop_cartItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/robotoblack"
+                android:text="Vostro"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_nameBrand_cartItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/robotoregular"
+                android:text="Laptop Dell"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_priceLap_cartItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/robotoregular"
+                android:text="2.500.000 VND"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+               >
+          <LinearLayout
+              android:layout_width="30dp"
+              android:orientation="horizontal"
+              android:background="@color/mainColor"
+              android:id="@+id/linear_plus"
+              android:gravity="center"
+              android:layout_gravity="center_horizontal"
+              android:layout_height="30dp">
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/icon_plus"/>
+          </LinearLayout>
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/tv_amountSell_cartItem"
+                    android:background="@drawable/textview_shape"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/robotoregular"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    />
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:orientation="horizontal"
+                    android:background="@color/mainColor"
+                    android:id="@+id/linear_minus"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="30dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_minus"/>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_amountLap_cartItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/robotoregular"
+                android:text="Còn lại 10 sản phẩm"
+                android:textColor="@color/red"
+                android:textSize="15sp" />
+        </LinearLayout>
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/imv_cancel_cartItem"
+    android:src="@drawable/icon_cancel"
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="5dp"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

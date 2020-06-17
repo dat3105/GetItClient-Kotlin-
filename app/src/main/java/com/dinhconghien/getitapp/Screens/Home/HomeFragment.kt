@@ -2,12 +2,14 @@ package com.dinhconghien.getitapp.Screens.Home
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +19,7 @@ import com.dinhconghien.getitapp.Adapter.SliderImage_Adapter
 import com.dinhconghien.getitapp.Models.BrandLapName
 import com.dinhconghien.getitapp.Models.SliderImage
 import com.dinhconghien.getitapp.R
+import com.dinhconghien.getitapp.Screens.Cart.CartActivity
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
@@ -44,6 +47,8 @@ class HomeFragment : Fragment() {
     lateinit var reclerView_brandLap: RecyclerView
     lateinit var brandLap: BrandLapName
     var listBrandName = ArrayList<BrandLapName>()
+
+    lateinit var imv_cart: ImageView
 
     val TAG = "Check HomeFragment 's Lifecycle"
     val listSliderTAG = "Check list Slider"
@@ -75,12 +80,20 @@ class HomeFragment : Fragment() {
 
         getBrandNameItem(view)
 
+        imv_cart.setOnClickListener {
+            val intent = Intent(view.context,
+                CartActivity::class.java)
+            startActivity(intent)
+
+        }
+
         return view
     }
 
     private fun initComponents(view: View) {
         sliderView = view.findViewById(R.id.imageSlider)
         reclerView_brandLap = view.findViewById(R.id.reclerView_itemBrandName_homeScreen)
+        imv_cart = view.findViewById(R.id.imv_cart_homeScreen)
     }
 
     private fun initForSliderImage() {
@@ -99,7 +112,7 @@ class HomeFragment : Fragment() {
         val gridLayoutManager =
             GridLayoutManager(view.context, 3, LinearLayoutManager.VERTICAL, false)
         reclerView_brandLap.layoutManager = gridLayoutManager
-      reclerView_brandLap.setHasFixedSize(true)
+        reclerView_brandLap.setHasFixedSize(true)
         reclerView_brandLap.adapter = adapterBrandLap
 
     }

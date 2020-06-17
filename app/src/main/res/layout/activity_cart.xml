@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screens.Cart.CartActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolbar_cartScreen"
+            android:background="@drawable/toolbar_shape"
+            app:navigationIcon="@drawable/icon_back"
+            app:title="GIỎ HÀNG"
+            app:titleTextColor="@color/mainColor"
+            />
+
+        <RelativeLayout
+            android:id="@+id/reLayout_cartScreen"
+            android:layout_width="match_parent"
+            android:layout_height="679dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imv_cartempty"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/cart_empty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/imv_cartempty"
+                android:text="Bạn không có sản phẩm nào"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:background="@drawable/menuscreen"
+            android:id="@+id/linearCart_cartScreen">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DANH SÁCH SẢN PHẨM"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoblack"
+                android:layout_margin="15dp"
+                android:textSize="18sp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rcView_listCart_cartScreen"
+                android:layout_marginHorizontal="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ĐỊA CHỈ NHẬN HÀNG"
+                android:textColor="@color/black"
+                android:fontFamily="@font/robotoblack"
+                android:layout_margin="15dp"
+                android:textSize="18sp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/et_address_cartScreen"
+                android:background="@drawable/edittext_shape"
+                android:hint="Hãy nhập địa chỉ nhận hàng"
+                android:gravity="top"
+                android:padding="10dp"
+                android:layout_marginHorizontal="15dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:id="@+id/btn_confirm_cartScreen"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/button_shape"
+                android:layout_margin="15dp"
+                android:text="thanh toán"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    
+
+
+</ScrollView>
