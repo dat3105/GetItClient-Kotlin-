@@ -6,9 +6,11 @@
     app:cardCornerRadius="7dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:paddingBottom="8dp"
         >
         <ImageView
@@ -32,20 +34,17 @@
             android:layout_centerHorizontal="true"
             android:textSize="12sp"
             />
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+        <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/ratingBar_listLapItem"
-            android:layout_below="@id/tv_nameLaptop_listLapItem"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
             android:layout_marginTop="5dp"
-            android:layout_centerHorizontal="true"
-           android:isIndicator="true"
-            android:stepSize="1"
-            android:max="5"
+            android:isIndicator="true"
             android:progressBackgroundTint="@color/mainColor"
             android:scaleX="0.5"
             android:scaleY="0.5"
-            />
+            android:stepSize="0.1" />
         <TextView
             android:id="@+id/tv_brandName_listLapItem"
             android:layout_width="wrap_content"
@@ -92,6 +91,6 @@
                 android:textSize="8sp"
                 />
         </LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

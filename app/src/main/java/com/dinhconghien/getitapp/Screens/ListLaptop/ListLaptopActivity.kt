@@ -2,6 +2,7 @@ package com.dinhconghien.getitapp.Screens.ListLaptop
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dinhconghien.getitapp.Adapter.Cart_Adapter
@@ -31,6 +32,16 @@ class ListLaptopActivity : AppCompatActivity() {
         toolbar_listLaptopScreen.title = brandLapName
 
         addLapItem()
+
+        nameLap_search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapterListLap.myFilter.filter(newText)
+                return false
+            }
+        })
     }
 
     private fun addLapItem(){
@@ -38,8 +49,20 @@ class ListLaptopActivity : AppCompatActivity() {
             4,12000000,"Laptop Dell",10)
         dsLap.add(listLaptop)
 
-        listLaptop = ListLaptop(R.drawable.avatarlaptop,"Vostro",
-            7,12000000,"Laptop Dell",10)
+        listLaptop = ListLaptop(R.drawable.avatarlaptop,"Pavillon",
+            5,12000000,"Laptop Dell",10)
+        dsLap.add(listLaptop)
+
+        listLaptop = ListLaptop(R.drawable.avatarlaptop,"RTX",
+            3,12000000,"Laptop Dell",10)
+        dsLap.add(listLaptop)
+
+        listLaptop = ListLaptop(R.drawable.avatarlaptop,"LCD",
+            3,12000000,"Laptop Dell",10)
+        dsLap.add(listLaptop)
+
+        listLaptop = ListLaptop(R.drawable.avatarlaptop,"MVVM",
+            3,12000000,"Laptop Dell",10)
         dsLap.add(listLaptop)
 
         listLaptop = ListLaptop(R.drawable.avatarlaptop,"Vostro",
