@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="vertical"
+        android:background="@drawable/button_menu_shape">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:background="@drawable/button_shape">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imv_back_dialogInfoLapDetail"
+                android:src="@drawable/whitebackicon"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin chi tiết"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_weight="3"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"/>
+
+        </LinearLayout>
+        <!--  title part  -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoblack"
+                android:text="Bộ xử lí"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                />
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Hãng CPU :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_kindOfCPU_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--   field 1     -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Công nghệ CPU :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_techCPU_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--   field 2     -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Tốc độ CPU :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_speedCPU_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--   field 3     -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Loại CPU"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_brandCPU_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--   field 4     -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ nhớ đệm"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_boNhoDem_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--   field 5     -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoblack"
+                android:text="RAM"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                />
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Dung lượng :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_ramCapicity_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!-- RAM  field 1     -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Loại RAM :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_ramType_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!-- RAM  field 2     -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Tốc độ BUS :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_busSpeed_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!-- RAM  field 3     -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Số lượng khe :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_holeOfRam_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!-- RAM  field 4     -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoblack"
+                android:text="Màn hình"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                />
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Kích thước :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_sizeOfScreen_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+<!--     màn hình field 1       -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Độ phân giải :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_dimensionOfScreen_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--     màn hình field 2       -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Công nghệ :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_techScreen_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--     màn hình field 3       -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoblack"
+                android:text="Bảo hành và xuất xứ"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                />
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Thời gian :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_timeOfGuarantee_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--     Bảo hành và xuất xứ field 1       -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Xuất xứ :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_xuatXu_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <!--     Bảo hành và xuất xứ field 2       -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Năm sản xuất :"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/tv_productionYear_infoLapDetail_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Bộ xử lí"
+                    android:textColor="@color/blurblack"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+
+        </LinearLayout>
+<!--    body part    -->
+    </LinearLayout>
+</ScrollView>

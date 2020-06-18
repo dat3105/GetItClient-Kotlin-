@@ -1,6 +1,7 @@
 package com.dinhconghien.getitapp.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.support.v4.media.RatingCompat
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.ListLaptop
 import com.dinhconghien.getitapp.R
+import com.dinhconghien.getitapp.Screens.ListLapDetail.ListLapDetailActivity
+import com.dinhconghien.getitapp.Screens.ListLaptop.ListLaptopActivity
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -18,6 +21,7 @@ class ListLaptop_Adapter(val context: Context , val listLap : ArrayList<ListLapt
     RecyclerView.Adapter<ListLaptop_Adapter.ViewHolder>() , Filterable {
 
     var listLapFilter = ArrayList<ListLaptop>()
+    lateinit var myContext: Context
 
     init {
         listLapFilter = listLap
@@ -27,6 +31,7 @@ class ListLaptop_Adapter(val context: Context , val listLap : ArrayList<ListLapt
         viewType: Int
     ): ViewHolder {
         val inflate: View = LayoutInflater.from(parent.context).inflate(R.layout.item_listlaptop, null)
+        myContext = parent.context
         return ViewHolder(inflate)
     }
 
@@ -46,6 +51,11 @@ class ListLaptop_Adapter(val context: Context , val listLap : ArrayList<ListLapt
             .fitCenter()
             .into(holder.imv_avaLap)
         holder.ratingLap.numStars = listLapItem.rating
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(myContext, ListLapDetailActivity::class.java)
+            myContext.startActivity(intent)
+        }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -85,7 +95,6 @@ class ListLaptop_Adapter(val context: Context , val listLap : ArrayList<ListLapt
         override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 listLapFilter = results?.values as ArrayList<ListLaptop>
                 notifyDataSetChanged()
-
         }
 
     }

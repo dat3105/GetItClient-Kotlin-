@@ -11,7 +11,8 @@ import com.dinhconghien.getitapp.Models.SliderImage
 import com.dinhconghien.getitapp.R
 import com.smarteist.autoimageslider.SliderViewAdapter
 
-class SliderImage_Adapter(val context : Context ,val listSlider : ArrayList<SliderImage>) : SliderViewAdapter<SliderImage_Adapter.ViewHolder>() {
+class SliderImage_Adapter(val context : Context ,val listSlider : ArrayList<SliderImage>) :
+    SliderViewAdapter<SliderImage_Adapter.ViewHolder>() {
     /**
      * Create a new view holder
      *
