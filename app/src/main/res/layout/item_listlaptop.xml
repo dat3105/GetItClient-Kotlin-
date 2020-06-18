@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="7dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        >
+        <ImageView
+            android:id="@+id/imv_avatarLap_listLapItem"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/hinhnenmac" />
+
+        <TextView
+            android:id="@+id/tv_nameLaptop_listLapItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imv_avatarLap_listLapItem"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/robotoblack"
+            android:text="Vostro"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:textSize="12sp"
+            />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar_listLapItem"
+            android:layout_below="@id/tv_nameLaptop_listLapItem"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+           android:isIndicator="true"
+            android:stepSize="1"
+            android:max="5"
+            android:progressBackgroundTint="@color/mainColor"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            />
+        <TextView
+            android:id="@+id/tv_brandName_listLapItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ratingBar_listLapItem"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="Laptop Dell"
+            android:textStyle="normal"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tv_brandName_listLapItem"
+            android:layout_centerInParent="true"
+            >
+            <TextView
+                android:id="@+id/tv_priceLap_listLapItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ratingBar_listLapItem"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/robotoregular"
+                android:textColor="@color/red"
+                android:text="2000000 VND"
+                android:textStyle="normal"
+                android:textSize="12sp"
+                />
+            <TextView
+                android:id="@+id/tv_amountLap_listLapItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ratingBar_listLapItem"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/robotoregular"
+                android:textColor="@color/black"
+                android:text="SỐ lượng : 28 chiếc"
+                android:textStyle="normal"
+                android:textSize="8sp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

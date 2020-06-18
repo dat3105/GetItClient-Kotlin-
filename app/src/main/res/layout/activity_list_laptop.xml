@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/menuscreen"
+    tools:context=".Screens.ListLaptop.ListLaptopActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_listLaptopScreen"
+        android:background="@drawable/toolbar_shape"
+        app:navigationIcon="@drawable/icon_back"
+        app:title="List Sản phẩm"
+        app:titleTextColor="@color/mainColor"
+        />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/people_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchview_shape"
+        android:layout_margin="15dp"
+        app:queryHint="Nhập tên sản phẩm muốn tìm"
+        app:iconifiedByDefault="false"
+         />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rcView_listLapScreen"
+        android:layout_marginHorizontal="15dp"
+        />
+</LinearLayout>

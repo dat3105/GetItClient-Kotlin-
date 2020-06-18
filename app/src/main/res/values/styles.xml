@@ -6,5 +6,8 @@
         <item name="colorPrimaryDark">#2F85FF</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#2F85FF</item>
+        <item name="colorControlActivated">#2F85FF</item>
+    </style>
 </resources>

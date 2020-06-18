@@ -10,19 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc1d520-5dbf-48ad-9467-1edb0e691389" name="Default Changelist" comment="+Tạo layout màn hình chào,login,quên mật khẩu,">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/Cart_Adapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/Cart.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Cart/CartActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/avatarlaptop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cart_empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_cancel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_cartscreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_minus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/textview_shape.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/toolbar_shape.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cart.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ListLaptop_Adapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/ListLaptop.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLaptop/ListLaptopActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/searchview_shape.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_list_laptop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_listlaptop.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -37,16 +30,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/BrandLapName_Adapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/BrandLapName_Adapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Home/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Home/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/edittext_shape.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edittext_shape.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="4200bbf0d69c94cf" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6_API_26" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -62,8 +53,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -88,12 +79,15 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.dinhconghien.getitapp.Screens.Cart" />
+    </key>
+    <key name="android.template.-1355681429">
+      <recent name="com.dinhconghien.getitapp.Screens" />
+    </key>
     <key name="android.template.1252794445">
       <recent name="com.dinhconghien.getitapp.Screens.Login" />
       <recent name="com.dinhconghien.getitapp.Screens.Splash" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.dinhconghien.getitapp.Screens.Cart" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\BackupGetIt\GetItBackup\app\src\main\res\drawable" />
@@ -104,8 +98,8 @@
       <recent name="com.dinhconghien.getitapp.Screens.GetBackPassword" />
       <recent name="com.dinhconghien.getitapp.Screens.Register" />
     </key>
-    <key name="android.template.-1355681429">
-      <recent name="com.dinhconghien.getitapp.Screens" />
+    <key name="android.template.-464518288">
+      <recent name="com.dinhconghien.getitapp.Screens.ListLaptop" />
     </key>
   </component>
   <component name="RunManager">
@@ -182,10 +176,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1592385965894">
+    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1592411166176">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592385965894" />
+    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592411166176" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592303016815">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -194,10 +188,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="448" y="14" width="472" height="699" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1592387316804" />
-    <state x="421" y="200" key="AndroidCreateResourceFileDialog" timestamp="1592383291709">
+    <state x="421" y="200" key="AndroidCreateResourceFileDialog" timestamp="1592410078253">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="421" y="200" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1592383291709" />
+    <state x="421" y="200" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1592410078253" />
     <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1592206038262">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -210,22 +204,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="540" y="257" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1592282608534" />
-    <state width="1323" height="120" key="GridCell.Tab.0.bottom" timestamp="1592402806880">
+    <state width="1323" height="120" key="GridCell.Tab.0.bottom" timestamp="1592415193567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="120" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592402806880" />
-    <state width="1323" height="120" key="GridCell.Tab.0.center" timestamp="1592402806880">
+    <state width="1323" height="120" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592415193567" />
+    <state width="1323" height="120" key="GridCell.Tab.0.center" timestamp="1592415193566">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="120" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592402806880" />
-    <state width="1323" height="120" key="GridCell.Tab.0.left" timestamp="1592402806880">
+    <state width="1323" height="120" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592415193566" />
+    <state width="1323" height="120" key="GridCell.Tab.0.left" timestamp="1592415193566">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="120" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592402806880" />
-    <state width="1323" height="120" key="GridCell.Tab.0.right" timestamp="1592402806880">
+    <state width="1323" height="120" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592415193566" />
+    <state width="1323" height="120" key="GridCell.Tab.0.right" timestamp="1592415193567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="120" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592402806880" />
+    <state width="1323" height="120" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592415193567" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1592196463174">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

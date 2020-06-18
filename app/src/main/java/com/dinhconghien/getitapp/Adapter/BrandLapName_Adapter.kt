@@ -1,6 +1,7 @@
 package com.dinhconghien.getitapp.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,14 +12,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.BrandLapName
 import com.dinhconghien.getitapp.R
+import com.dinhconghien.getitapp.Screens.ListLaptop.ListLaptopActivity
 
 class BrandLapName_Adapter(val context: Context , val listBrandLapName : ArrayList<BrandLapName>) : RecyclerView.Adapter<BrandLapName_Adapter.ViewHolder>() {
-
+    lateinit var myContext: Context
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val inflate: View = LayoutInflater.from(parent.context).inflate(R.layout.item_brandlaptop, null)
+        val inflate: View = LayoutInflater.from(context).inflate(R.layout.item_brandlaptop, null)
+        myContext = parent.context
         return ViewHolder(inflate)
     }
 
@@ -34,6 +37,12 @@ class BrandLapName_Adapter(val context: Context , val listBrandLapName : ArrayLi
              .load(brandLap.avatarBrandLapName)
              .fitCenter()
              .into(holder.imv_avatarBrandLap)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(myContext,ListLaptopActivity::class.java)
+            intent.putExtra("brandLapName", brandLap.brandLapName)
+            myContext.startActivity(intent)
+        }
     }
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
