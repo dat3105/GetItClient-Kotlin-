@@ -1,10 +1,17 @@
 package com.dinhconghien.getitapp.Screens.Invoice
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.dinhconghien.getitapp.Adapter.InvoiceAccepted_Adapter
+import com.dinhconghien.getitapp.Adapter.InvoiceWating_Adapter
+import com.dinhconghien.getitapp.Models.InvoiceAccepted
+import com.dinhconghien.getitapp.Models.InvoiceWating
 import com.dinhconghien.getitapp.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,6 +29,11 @@ class InvoiceAcceptedFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var adapterInvoiceAccepted : InvoiceAccepted_Adapter
+    lateinit var rcView_invoiceAccepted : RecyclerView
+    lateinit var invoiceAccepted: InvoiceAccepted
+    var listInvoiceAccepted= ArrayList<InvoiceAccepted>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,8 +46,42 @@ class InvoiceAcceptedFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_invoice_accepted, container, false)
+        val view = inflater.inflate(R.layout.fragment_invoice_accepted, container, false)
+        init(view)
+        getInvoiceItem(view)
+        return view
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        addInvoiceItem()
+    }
+
+    private fun init(view: View){
+        rcView_invoiceAccepted = view.findViewById(R.id.rcView_invoiceAccepted)
+    }
+
+    private fun addInvoiceItem(){
+        invoiceAccepted = InvoiceAccepted("jcdwncbcJJNOJN","17/01/2020 09:30",12000000,"Đã xác nhận")
+        listInvoiceAccepted.add(invoiceAccepted)
+
+        invoiceAccepted = InvoiceAccepted("jcdwncbcJJNOJN","17/01/2020 09:30",12000000,"Đã xác nhận")
+        listInvoiceAccepted.add(invoiceAccepted)
+
+        invoiceAccepted = InvoiceAccepted("jcdwncbcJJNOJN","17/01/2020 09:30",12000000,"Đã xác nhận")
+        listInvoiceAccepted.add(invoiceAccepted)
+
+        invoiceAccepted = InvoiceAccepted("jcdwncbcJJNOJN","17/01/2020 09:30",12000000,"Đã xác nhận")
+        listInvoiceAccepted.add(invoiceAccepted)
+    }
+
+    private fun getInvoiceItem(view: View){
+        adapterInvoiceAccepted = InvoiceAccepted_Adapter(view.context,listInvoiceAccepted)
+        rcView_invoiceAccepted.layoutManager = LinearLayoutManager(view.context,
+            LinearLayoutManager.VERTICAL,false)
+        rcView_invoiceAccepted.setHasFixedSize(true)
+        rcView_invoiceAccepted.adapter = adapterInvoiceAccepted
+
     }
 
     companion object {
