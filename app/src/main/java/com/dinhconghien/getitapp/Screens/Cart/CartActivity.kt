@@ -1,6 +1,7 @@
 package com.dinhconghien.getitapp.Screens.Cart
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -11,9 +12,8 @@ import com.dinhconghien.getitapp.R
 import kotlinx.android.synthetic.main.activity_cart.*
 
 class CartActivity : AppCompatActivity() {
-    companion object{
-        var listCart = ArrayList<Cart>()
-    }
+
+    var listCart = ArrayList<Cart>()
     private lateinit var adapterCart: Cart_Adapter
     private lateinit var cart: Cart
 
@@ -30,6 +30,11 @@ class CartActivity : AppCompatActivity() {
         addCartItem()
 
         Log.d(TAG,"onCreate ${listCart.size}")
+
+        btn_confirm_cartScreen.setOnClickListener {
+            val intent = Intent(this,PaymentActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

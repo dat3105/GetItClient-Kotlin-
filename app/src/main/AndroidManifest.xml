@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Screens.Payment.PaymentActivity"></activity>
+        <activity android:name=".Screens.Invoice.InvoiceAcceptedDetail_Activity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".Screens.Cart.PaymentActivity"
+            android:parentActivityName=".Screens.Cart.CartActivity" />
         <activity
             android:name=".Screens.Invoice.InvoiceWatingDetail_Activity"
             android:parentActivityName=".MainActivity" />

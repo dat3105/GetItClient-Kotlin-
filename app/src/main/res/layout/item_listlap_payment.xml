@@ -16,92 +16,60 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentLeft="true"
-            android:id="@+id/imv_avaLap_item_invoiceAccepted"
+            android:id="@+id/imv_avaLap_paymentItem"
             android:src="@drawable/hinhnenmac"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_toRightOf="@+id/imv_avaLap_item_invoiceAccepted"
-            >
+            android:layout_toRightOf="@+id/imv_avaLap_paymentItem"
+           >
             <TextView
-                android:id="@+id/tv_nameLapTop_invoiceAccepted_Item"
+                android:id="@+id/tv_nameLapTop_paymentItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="@font/robotoregular"
+                android:fontFamily="@font/robotoblack"
                 android:text="Vostro"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tv_nameBrand_invoiceAccepted_Item"
+                android:id="@+id/tv_nameBrand_paymentItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/robotoregular"
                 android:text="Laptop Dell"
                 android:textColor="@color/black"
-                android:layout_below="@+id/tv_nameLapTop_invoiceAccepted_Item"
+                android:layout_below="@+id/tv_nameLapTop_paymentItem"
                 android:textSize="18sp" />
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:id="@+id/relayout_invoiceAccepted_item"
-                android:layout_below="@+id/tv_nameBrand_invoiceAccepted_Item"
+                android:layout_below="@+id/tv_nameBrand_paymentItem"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/tv_priceLap_invoiceAccepted_Item"
+                    android:id="@+id/tv_priceLap_paymentItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/robotoblack"
+                    android:fontFamily="@font/robotoregular"
                     android:text="2.500.000 VND"
-                    android:textColor="@color/black"
+                    android:textColor="@color/redPorto"
                     android:textSize="18sp" />
                 <TextView
-                    android:id="@+id/tv_amount_invoiceAccepted_Item"
+                    android:id="@+id/tv_amount_paymentItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="@font/robotoregular"
                     android:layout_alignParentRight="true"
-                    android:text="Số lượng : 05"
-                    android:textColor="@color/black"
+                    android:text="x 1"
+                    android:textColor="@color/blurblack"
                     android:textSize="18sp" />
             </RelativeLayout>
-          <View
-              android:layout_width="match_parent"
-              android:id="@+id/view_invoiceAccepted_item"
-              android:layout_height="0.1dp"
-              android:layout_below="@+id/relayout_invoiceAccepted_item"
-              android:background="@color/blurblack"
-              android:layout_marginBottom="15dp"
-              android:layout_marginTop="15dp"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/view_invoiceAccepted_item"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/robotoregular"
-        android:text="Đánh giá sản phẩm : "
-        android:textColor="@color/black"
-        android:layout_below="@+id/view_invoiceAccepted_item"
-        android:textSize="18sp" />
 
-    <RatingBar
-        android:id="@+id/ratingBar_invoiceAccepted_Item"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_below="@+id/view_invoiceAccepted_item"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="5dp"
-        android:stepSize="0.1"
-        android:theme="@style/RatingBar" />
-</LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>

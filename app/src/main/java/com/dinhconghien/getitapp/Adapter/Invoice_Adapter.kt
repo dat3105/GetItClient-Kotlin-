@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.Invoice
 import com.dinhconghien.getitapp.R
+import com.dinhconghien.getitapp.Screens.Invoice.InvoiceAcceptedDetail_Activity
 import com.dinhconghien.getitapp.Screens.Invoice.InvoiceWatingDetail_Activity
 import com.dinhconghien.getitapp.Screens.Login.LoginActivity
 
@@ -55,7 +56,7 @@ class Invoice_Adapter(val context: Context, val listInvoice : ArrayList<Invoice>
                 myContext.startActivity(intent)
             }
             if (status.contains("Đã giao",true)){
-                val intent = Intent(myContext,LoginActivity::class.java)
+                val intent = Intent(myContext,InvoiceAcceptedDetail_Activity::class.java)
                 myContext.startActivity(intent)
             }
 
