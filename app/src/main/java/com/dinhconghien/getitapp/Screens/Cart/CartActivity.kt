@@ -11,9 +11,12 @@ import com.dinhconghien.getitapp.R
 import kotlinx.android.synthetic.main.activity_cart.*
 
 class CartActivity : AppCompatActivity() {
+    companion object{
+        var listCart = ArrayList<Cart>()
+    }
     private lateinit var adapterCart: Cart_Adapter
     private lateinit var cart: Cart
-    private var listCart = ArrayList<Cart>()
+
     private val TAG = "Check size of listCart"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +33,7 @@ class CartActivity : AppCompatActivity() {
 
     }
 
-    private fun addCartItem(){
+   fun addCartItem(){
         cart = Cart(R.drawable.avatarlaptop,"Vostro","Laptop Lenovo", 10000000,10)
         listCart.add(cart)
 

@@ -8,5 +8,6 @@
     <color name="mainColor">#2F85FF</color>
     <color name="white">#ffffff</color>
     <color name="red">#B50300</color>
+    <color name="redPorto">#FF0000</color>
     <color name="green">#00A65C</color>
 </resources>

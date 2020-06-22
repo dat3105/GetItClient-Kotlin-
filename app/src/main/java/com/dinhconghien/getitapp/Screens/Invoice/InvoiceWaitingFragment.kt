@@ -8,10 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dinhconghien.getitapp.Adapter.BrandLapName_Adapter
-import com.dinhconghien.getitapp.Adapter.InvoiceWating_Adapter
-import com.dinhconghien.getitapp.Models.BrandLapName
-import com.dinhconghien.getitapp.Models.InvoiceWating
+import com.dinhconghien.getitapp.Adapter.Invoice_Adapter
+import com.dinhconghien.getitapp.Models.Invoice
 import com.dinhconghien.getitapp.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,10 +22,10 @@ class InvoiceWaitingFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    lateinit var adapterInvoiceWating : InvoiceWating_Adapter
+    lateinit var adapterInvoice : Invoice_Adapter
     lateinit var rcView_invoiceWating : RecyclerView
-    lateinit var invoiceWating: InvoiceWating
-    var listInvoiceWating = ArrayList<InvoiceWating>()
+    lateinit var invoice: Invoice
+    var listInvoiceWating = ArrayList<Invoice>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,37 +55,29 @@ class InvoiceWaitingFragment : Fragment() {
     }
 
     private fun addInvoiceItem(){
-        invoiceWating = InvoiceWating("jcdwncbcJJNOJN","17/01/2020",12000000,"Đang chờ xác nhận")
-        listInvoiceWating.add(invoiceWating)
+        invoice = Invoice("jcdwncbcJJNOJN","17/01/2020",12000000,
+            "Đang chờ xác nhận")
+        listInvoiceWating.add(invoice)
 
-        invoiceWating = InvoiceWating("jcdwncbcJJNOJN","17/01/2020",12000000,"Đang chờ xác nhận")
-        listInvoiceWating.add(invoiceWating)
+        invoice = Invoice("jcdwncbcJJNOJN","17/01/2020",12000000,
+            "Đang chờ xác nhận")
+        listInvoiceWating.add(invoice)
 
-        invoiceWating = InvoiceWating("jcdwncbcJJNOJN","17/01/2020",12000000,"Đang chờ xác nhận")
-        listInvoiceWating.add(invoiceWating)
+        invoice = Invoice("jcdwncbcJJNOJN","17/01/2020",12000000,
+            "Đang chờ xác nhận")
+        listInvoiceWating.add(invoice)
 
-        invoiceWating = InvoiceWating("jcdwncbcJJNOJN","17/01/2020",12000000,"Đang chờ xác nhận")
-        listInvoiceWating.add(invoiceWating)
+        invoice = Invoice("jcdwncbcJJNOJN","17/01/2020",12000000,
+            "Đang chờ xác nhận")
+        listInvoiceWating.add(invoice)
+
     }
 
     private fun getInvoiceItem(view: View){
-        adapterInvoiceWating = InvoiceWating_Adapter(view.context,listInvoiceWating)
+        adapterInvoice = Invoice_Adapter(view.context,listInvoiceWating)
         rcView_invoiceWating.layoutManager = LinearLayoutManager(view.context,LinearLayoutManager.VERTICAL,false)
         rcView_invoiceWating.setHasFixedSize(true)
-        rcView_invoiceWating.adapter = adapterInvoiceWating
-
+        rcView_invoiceWating.adapter = adapterInvoice
     }
 
-    companion object {
-
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InvoiceWaitingFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

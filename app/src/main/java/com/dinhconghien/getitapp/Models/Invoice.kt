@@ -1,6 +1,6 @@
 package com.dinhconghien.getitapp.Models
 
-class InvoiceAccepted(
+class Invoice(
     val idInvoice : String,
     val timeOrder : String ,
     val sumPrice  : Int ,

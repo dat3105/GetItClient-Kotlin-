@@ -20,11 +20,9 @@ class ListLaptopActivity : AppCompatActivity() {
     private lateinit var listLaptop: ListLaptop
     private var dsLap = ArrayList<ListLaptop>()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_laptop)
-
         setSupportActionBar(toolbar_listLaptopScreen)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
