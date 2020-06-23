@@ -10,15 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc1d520-5dbf-48ad-9467-1edb0e691389" name="Default Changelist" comment="+Tạo layout màn hình chào,login,quên mật khẩu,">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ItemInvoiceAccepted_Adapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ListLapPayment_Adapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/ItemInvoiceAccepted.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/ListLapPayment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceAcceptedDetail_Activity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mybackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tran.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_accepted_detail_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_listlap_payment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Account/AboutUs_Activity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Account/EditAccount_Activity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/banneraccount.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_account_screen.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_editaccount.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_person.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_aboutus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_editaccount.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_noti.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_share.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_about_us_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_account_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_logout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -30,18 +36,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/Invoice_Adapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/Invoice_Adapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Cart/CartActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Cart/CartActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Payment/PaymentActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Cart/PaymentActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_accepted.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_accepted.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_waiting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_waiting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_cart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cart.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_invoice_accepted.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_invoice_accepted.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Account/AccountFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Account/AccountFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLapDetail/ListLapDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLapDetail/ListLapDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +63,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -95,21 +94,17 @@
     <key name="android.template.1919953614">
       <recent name="com.dinhconghien.getitapp.Screens.Invoice" />
     </key>
-    <key name="android.template.1867294155">
-      <recent name="com.dinhconghien.getitapp.Screens.Invoice" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\BackupGetIt\GetItBackup\app\src\main\res\drawable" />
-      <recent name="D:\BackupGetIt\GetItBackup\app" />
-      <recent name="D:\BackupGetIt\GetItBackup\app\src\main\res\drawable-v24" />
-      <recent name="D:\DuAnTotNghiep\GetItApp\app\src\main\res\drawable" />
-      <recent name="D:\DuAnTotNghiep\GetItApp\app\src\main\res\font" />
+    <key name="android.template.1235825069">
+      <recent name="com.dinhconghien.getitapp.Screens.Account" />
     </key>
     <key name="android.template.-297489609">
       <recent name="com.dinhconghien.getitapp.Screens.ListLapDetail" />
     </key>
     <key name="android.template.-1355681429">
       <recent name="com.dinhconghien.getitapp.Screens" />
+    </key>
+    <key name="android.template.1987410461">
+      <recent name="com.dinhconghien.getitapp.Screens.Payment" />
     </key>
     <key name="android.template.1252794445">
       <recent name="com.dinhconghien.getitapp.Screens.Login" />
@@ -118,18 +113,25 @@
     <key name="android.template.-250948055">
       <recent name="com.dinhconghien.getitapp.Admin" />
     </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.dinhconghien.getitapp.Screens.Cart" />
+    <key name="android.template.-464518288">
+      <recent name="com.dinhconghien.getitapp.Screens.ListLaptop" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\BackupGetIt\GetItBackup\app\src\main\res\drawable" />
+      <recent name="D:\BackupGetIt\GetItBackup\app" />
+      <recent name="D:\BackupGetIt\GetItBackup\app\src\main\res\drawable-v24" />
+      <recent name="D:\DuAnTotNghiep\GetItApp\app\src\main\res\drawable" />
+      <recent name="D:\DuAnTotNghiep\GetItApp\app\src\main\res\font" />
     </key>
     <key name="android.template.1668154744">
       <recent name="com.dinhconghien.getitapp.Screens.GetBackPassword" />
       <recent name="com.dinhconghien.getitapp.Screens.Register" />
     </key>
-    <key name="android.template.1987410461">
-      <recent name="com.dinhconghien.getitapp.Screens.Payment" />
+    <key name="android.template.1867294155">
+      <recent name="com.dinhconghien.getitapp.Screens.Invoice" />
     </key>
-    <key name="android.template.-464518288">
-      <recent name="com.dinhconghien.getitapp.Screens.ListLaptop" />
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.dinhconghien.getitapp.Screens.Cart" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,10 +208,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1592839075783">
+    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1592902613587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592839075783" />
+    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592902613587" />
     <state x="248" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592818248348">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -226,10 +228,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="119" key="AndroidCreateResourceDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1592473724525" />
-    <state x="421" y="198" key="AndroidCreateResourceFileDialog" timestamp="1592820845748">
+    <state x="421" y="198" key="AndroidCreateResourceFileDialog" timestamp="1592906660807">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="421" y="198" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1592820845748" />
+    <state x="421" y="198" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1592906660807" />
     <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1592206038262">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -242,30 +244,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="540" y="257" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1592282608534" />
-    <state width="1286" height="167" key="GridCell.Tab.0.bottom" timestamp="1592840097865">
+    <state width="1286" height="58" key="GridCell.Tab.0.bottom" timestamp="1592902200322">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="167" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592840097865" />
-    <state width="1286" height="167" key="GridCell.Tab.0.center" timestamp="1592840097864">
+    <state width="1286" height="58" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592902200322" />
+    <state width="1286" height="58" key="GridCell.Tab.0.center" timestamp="1592902200322">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="167" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592840097864" />
-    <state width="1286" height="167" key="GridCell.Tab.0.left" timestamp="1592840097864">
+    <state width="1286" height="58" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592902200322" />
+    <state width="1286" height="58" key="GridCell.Tab.0.left" timestamp="1592902200322">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="167" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592840097864" />
-    <state width="1286" height="167" key="GridCell.Tab.0.right" timestamp="1592840097865">
+    <state width="1286" height="58" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592902200322" />
+    <state width="1286" height="58" key="GridCell.Tab.0.right" timestamp="1592902200322">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="167" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592840097865" />
+    <state width="1286" height="58" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592902200322" />
+    <state width="1286" height="58" key="GridCell.Tab.1.bottom" timestamp="1592902200323">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="58" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592902200323" />
+    <state width="1286" height="58" key="GridCell.Tab.1.center" timestamp="1592902200322">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="58" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592902200322" />
+    <state width="1286" height="58" key="GridCell.Tab.1.left" timestamp="1592902200322">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="58" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592902200322" />
+    <state width="1286" height="58" key="GridCell.Tab.1.right" timestamp="1592902200323">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="58" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592902200323" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1592196463174">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592196463174" />
-    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1592819244732">
+    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1592841736040">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1592819244732" />
+    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1592841736040" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1592792037255">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -52,7 +52,6 @@ class ListLapDetailActivity : AppCompatActivity() ,View.OnClickListener{
 
      fun showCustomDialog(view: View) {
         val viewGroup = findViewById<ViewGroup>(android.R.id.content)
-
         //then we will inflate the custom alert dialog xml that we created
         val dialogView: View =
             LayoutInflater.from(this).inflate(R.layout.dialog_infolaptop_detail, viewGroup, false)
