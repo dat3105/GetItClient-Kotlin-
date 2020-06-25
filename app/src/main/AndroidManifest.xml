@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Screens.Account.AboutUs_Activity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Screens.Message.MessageContent_Activity"
+      >
+        </activity>
+        <activity
+            android:name=".Screens.Account.AboutUs_Activity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".Screens.Account.EditAccount_Activity" />
         <activity
             android:name=".Screens.Invoice.InvoiceAcceptedDetail_Activity"

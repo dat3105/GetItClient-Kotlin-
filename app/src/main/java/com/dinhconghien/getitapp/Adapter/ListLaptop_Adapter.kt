@@ -50,7 +50,7 @@ class ListLaptop_Adapter(val context: Context , val listLap : ArrayList<ListLapt
             .load(listLapItem.avatarLap)
             .fitCenter()
             .into(holder.imv_avaLap)
-        holder.ratingLap.numStars = listLapItem.rating
+        holder.ratingLap.rating = listLapItem.rating.toFloat()
 
         holder.itemView.setOnClickListener {
             val intent = Intent(myContext, ListLapDetailActivity::class.java)

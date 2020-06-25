@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardCornerRadius="7dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingBottom="8dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="15dp"
         >
         <ImageView
             android:id="@+id/imv_avatarLap_listLapItem"
@@ -19,6 +18,7 @@
             android:layout_height="90dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="6dp"
+            android:layout_alignParentTop="true"
             android:src="@drawable/hinhnenmac" />
 
         <TextView
@@ -38,23 +38,24 @@
         <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/ratingBar_listLapItem"
             android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_height="40dp"
             android:layout_marginTop="5dp"
             android:isIndicator="true"
-            android:progressBackgroundTint="@color/mainColor"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
+           android:theme="@style/RatingBar"
+            android:layout_below="@+id/tv_nameLaptop_listLapItem"
+            android:layout_centerInParent="true"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
             android:stepSize="0.1" />
         <TextView
             android:id="@+id/tv_brandName_listLapItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ratingBar_listLapItem"
-            android:layout_marginTop="5dp"
             android:fontFamily="@font/robotoregular"
             android:text="Laptop Dell"
             android:textStyle="normal"
-            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:textColor="@color/black"
             android:textSize="12sp"
             />
@@ -91,6 +92,6 @@
                 android:textSize="8sp"
                 />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

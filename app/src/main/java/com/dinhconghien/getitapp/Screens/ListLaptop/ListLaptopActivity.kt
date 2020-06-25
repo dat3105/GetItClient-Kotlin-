@@ -29,7 +29,7 @@ class ListLaptopActivity : AppCompatActivity() {
         val brandLapName  = intent.getStringExtra("brandLapName")
         toolbar_listLaptopScreen.title = brandLapName
 
-        addLapItem()
+        getLapItem()
 
         nameLap_search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -79,6 +79,6 @@ class ListLaptopActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        getLapItem()
+        addLapItem()
     }
 }
