@@ -33,15 +33,17 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:id="@+id/et_userName_registerScreen"
-        android:layout_margin="15dp"
-        android:background="@drawable/edittext_shape"
-        android:hint="Tên của bạn"
-        android:padding="10dp"
-        android:fontFamily="@font/robotoregular"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/et_userName_registerScreen"
+            android:padding="10dp"
+            android:hint="Tên của bạn"
+            android:autofillHints=""
+            android:layout_margin="15dp"
+            android:background="@drawable/edittext_shape"
+            android:fontFamily="@font/robotoregular"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -61,6 +63,8 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/edittext_shape"
+        android:inputType="number"
+        android:maxLength="10"
         android:hint="Số điện thoại"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
@@ -73,6 +77,7 @@
         android:layout_marginBottom="15dp"
         android:background="@drawable/edittext_shape"
         android:hint="Mật khẩu"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
     <EditText
@@ -83,6 +88,7 @@
         android:layout_marginRight="15dp"
         android:background="@drawable/edittext_shape"
         android:hint="Nhập lại mật khẩu"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
     <Button

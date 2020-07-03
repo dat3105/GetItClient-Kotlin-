@@ -62,12 +62,14 @@
         android:layout_marginRight="15dp"
         android:background="@drawable/edittext_shape"
         android:hint="Số điện thoại"
+        android:inputType="number"
+        android:maxLength="10"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:id="@+id/btn_register_registerScreen"
+        android:id="@+id/btn_confirm_getBackScreen"
         android:layout_margin="15dp"
         android:background="@drawable/button_shape"
         android:text="Xác nhận"
