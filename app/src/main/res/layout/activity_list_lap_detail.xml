@@ -30,11 +30,12 @@
                     android:textColor="@color/mainColor"
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"/>
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imv_addToCart_listLapDetailScreen"
                     android:src="@drawable/icon_addtocart"
+                    android:background="@drawable/button_image_shape"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
                     android:layout_alignParentRight="true"

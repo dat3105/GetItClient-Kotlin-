@@ -1,10 +1,13 @@
 package com.dinhconghien.getitapp.Screens.Register
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.User
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Login.LoginActivity
@@ -14,6 +17,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.coroutines.*
 import java.util.regex.Matcher
@@ -28,15 +33,15 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var patternEmail: Pattern
     lateinit var matcherEmail: Matcher
     var dbReference = FirebaseDatabase.getInstance().getReference("user")
-    lateinit var user: User
+   var user: User =User()
     var dialogLoading: DialogLoading? = null
     lateinit var job: Job
-
+    var avaUser = "no information"
+    var userAddress = "no information"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         job = Job()
-
         tv_loginHere_registerScreen.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -76,9 +81,9 @@ class RegisterActivity : AppCompatActivity() {
         } else if (!matcherEmail.matches()) {
             CustomToast.makeText(this, "Sai định dạng email", Toast.LENGTH_LONG, 2)!!.show()
             return
-        } else if (userName.contains(" ")) {
+        } else if (userName.startsWith(" ") || userName.endsWith(" ")) {
             CustomToast.makeText(
-                this, "Không được để khoảng trắng ở 'Tên của bạn'",
+                this, "Không được để khoảng trắng đầu và cuối ở 'Tên của bạn'",
                 Toast.LENGTH_LONG, 2
             )?.show()
             return
@@ -104,6 +109,7 @@ class RegisterActivity : AppCompatActivity() {
             checkDuplcateEmail(email, phone, userName, password)
         }
     }
+
 
     fun checkDuplcateEmail(
         email: String,
@@ -139,7 +145,7 @@ class RegisterActivity : AppCompatActivity() {
                         return
                     } else {
                         try {
-                            user = User(email, phone, userName, password, "customer")
+                            user = User(userId,email,userName,phone,password,"Customer",false,true)
                             dbReference.child(userId).setValue(user)
                             CustomToast.makeText(
                                 this@RegisterActivity,

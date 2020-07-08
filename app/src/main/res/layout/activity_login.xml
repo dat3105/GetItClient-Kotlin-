@@ -49,6 +49,7 @@
         android:layout_marginRight="15dp"
         android:background="@drawable/edittext_shape"
         android:hint="Mật khẩu"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
 

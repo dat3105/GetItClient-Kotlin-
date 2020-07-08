@@ -28,22 +28,24 @@ class GetBackPassActivity : AppCompatActivity() {
     lateinit var patternEmail: Pattern
     lateinit var matcherEmail: Matcher
     lateinit var dialogLoading: DialogLoading
-    var dbReference = FirebaseDatabase.getInstance().getReference("user")
+    var dbReference = FirebaseDatabase.getInstance().getReference().child("user")
     var listUser = ArrayList<User>()
-    var user = User()
+   var user : User = User()
+    var TAG = "Check user forgotPass"
+    lateinit var job: Job
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_back_pass)
+        job = Job()
         imv_back_getBack.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         btn_confirm_getBackScreen.setOnClickListener {
             GlobalScope.launch(Dispatchers.Main) { getBackPass() }
-
         }
-
     }
 
     override fun onStart() {
@@ -61,6 +63,12 @@ class GetBackPassActivity : AppCompatActivity() {
 
             })
         }
+        Log.d(TAG,"Size of listUser of onStart :${listUser.size}")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        job.cancel()
     }
 
     suspend fun getBackPass() {
@@ -72,8 +80,8 @@ class GetBackPassActivity : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 dialogLoading = DialogLoading(this@GetBackPassActivity)
                 dialogLoading.show()
-                delay(1500L)
-                val password = async { checkInfo(email, phone) }.await()
+//                delay(1500L)
+                val password = async(Dispatchers.IO) { checkInfo(email, phone) }.await()
                 if (password == "") {
                     CustomToast.makeText(
                         this@GetBackPassActivity,
@@ -124,7 +132,7 @@ class GetBackPassActivity : AppCompatActivity() {
             CustomToast.makeText(this, "Sai định dạng số phone", Toast.LENGTH_LONG, 2)?.show()
             return false
         } else if (!matcherEmail.matches()) {
-            CustomToast.makeText(this, "Sai định dạng số email", Toast.LENGTH_LONG, 2)?.show()
+            CustomToast.makeText(this, "Sai định dạng email", Toast.LENGTH_LONG, 2)?.show()
             return false
         }
         return true
@@ -139,12 +147,12 @@ class GetBackPassActivity : AppCompatActivity() {
 
 
     fun checkInfo(email: String, phone: String): String {
-        var password = ""
-        for (i in 0 until listUser.size) {
-            if (listUser[i].email.equals(email) && listUser[i].phone.equals(phone)) {
-                password = listUser[i].password.toString()
+            var password = ""
+            for (i in 0 until listUser.size) {
+                if (listUser[i].email.equals(email) && listUser[i].phone.equals(phone)) {
+                    password = listUser[i].password
+                }
             }
-        }
         return password
     }
 

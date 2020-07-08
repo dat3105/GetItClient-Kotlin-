@@ -1,40 +1,30 @@
 package com.dinhconghien.getitapp.Models
 
+import android.provider.ContactsContract
 import java.io.Serializable
 
-class User() : Serializable {
-    var email: String? = ""
-    var phone: String? = ""
-    var userName: String? = ""
-    var password: String? = ""
-    var role: String = "Customer"
 
-    //    private var avaUser : String? = null
-    var address: String? = null
-    var isOnline: Boolean = false
+class User() : Serializable{
+     var userID : String = ""
+     var email : String =""
+     var userName : String =""
+     var phone : String =""
+     var password : String =""
+     var role : String = "Customer"
+     var wasOnline : Boolean = false
+     var wasFirstBuy : Boolean = true
+     var userAddress : String? = null
+     var avaUser : String? = null
 
-    //sign up
-    constructor(
-        email: String, phone: String, userName: String, password: String,
-        role: String = "Customer"
-    ) : this() {
+    constructor(userID:String,email: String,userName:String,phone:String,password:String
+                ,role:String,wasOnline : Boolean,wasFirstBuy:Boolean) : this(){
+        this.userID =userID
         this.email = email
-        this.phone = phone
         this.userName = userName
+        this.phone = phone
         this.password = password
         this.role = role
-    }
-
-    //add address in cart
-    constructor(address: String) : this() {
-        this.address = address
-    }
-
-    //check login , if the user access without any other device that access previously -> access successfully
-    //otherwise -> toast : "This account has been accessing in the other device"
-    constructor(email: String, password: String, isOnline: Boolean) : this() {
-        this.email = email
-        this.password = password
-        this.isOnline = isOnline
+        this.wasOnline = wasOnline
+        this.wasFirstBuy = wasFirstBuy
     }
 }

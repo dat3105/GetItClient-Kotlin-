@@ -1,11 +1,12 @@
 package com.dinhconghien.getitapp.Screens.Account
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +15,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
+import com.dinhconghien.getitapp.Models.User
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Login.LoginActivity
+import com.dinhconghien.getitapp.Utils.SharePreference_Utils
+import com.google.firebase.database.*
+import kotlinx.coroutines.*
 
 
 class AccountFragment : Fragment()  {
@@ -28,20 +34,32 @@ class AccountFragment : Fragment()  {
     lateinit var btnShareApp : LinearLayout
     lateinit var btnAboutUs : LinearLayout
     lateinit var btnLogout : LinearLayout
+    var dbReference = FirebaseDatabase.getInstance().getReference().child("user")
+     var userID =""
+    var user : User = User()
+    var listUser = ArrayList<User>()
+    var listUserKey = ArrayList<String>()
+    val TAG = "DbError_Account"
+    lateinit var job: Job
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       val view = inflater.inflate(R.layout.fragment_account, container, false)
+        val view = inflater.inflate(R.layout.fragment_account, container, false)
         init(view)
+        job = Job()
+        var utils = SharePreference_Utils(view.context)
+        userID = utils.getSession()
+        fetchDataAndUpdateUI(userID)
 
-       btnEdit.setOnClickListener {
-           val intent = Intent(view?.context,EditAccount_Activity::class.java)
-           startActivity(intent)
-       }
+        btnEdit.setOnClickListener {
+            val intent = Intent(view?.context,EditAccount_Activity::class.java)
+            startActivity(intent)
+        }
 
         btnLogout.setOnClickListener {
-                showCustomDialog(view)
+            showCustomDialog(view)
         }
 
         btnAboutUs.setOnClickListener {
@@ -49,7 +67,30 @@ class AccountFragment : Fragment()  {
             startActivity(intent)
         }
 
+        btnShareApp.setOnClickListener {  }
+
+        btnNoti.setOnClickListener {  }
+
         return view
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        job.cancel()
+    }
+
+    private fun updateUI(){
+        var userName = ""
+        var email = ""
+        var phone = ""
+        for(i in 0 until  listUser.size){
+            userName = listUser[i].userName
+            email = listUser[i].email
+            phone = listUser[i].phone
+        }
+        tvUserName.text = userName
+        tvEmail.text =email
+        tvphoneNum.text = phone
     }
 
     private fun init(view: View){
@@ -65,20 +106,9 @@ class AccountFragment : Fragment()  {
     }
     fun showCustomDialog(view: View) {
         val viewGroup = view.findViewById<ViewGroup>(android.R.id.content)
-
-        //then we will inflate the custom alert dialog xml that we created
-        val dialogView: View =
-            LayoutInflater.from(view.context).inflate(R.layout.dialog_logout, viewGroup, false)
-
-
-        //Now we need an AlertDialog.Builder object
-        val builder =
-            AlertDialog.Builder(view.context)
-
-        //setting the view of the builder to our custom view that we already inflated
+        val dialogView: View = LayoutInflater.from(view.context).inflate(R.layout.dialog_logout, viewGroup, false)
+        val builder = AlertDialog.Builder(view.context)
         builder.setView(dialogView)
-
-        //finally creating the alert dialog and displaying it
         val alertDialog = builder.create()
         val imv_back =
             dialogView.findViewById<ImageView>(R.id.imv_back_dialogLogout)
@@ -86,7 +116,11 @@ class AccountFragment : Fragment()  {
         val btnNo = dialogView.findViewById<Button>(R.id.btn_no_dialogLogout)
 
         btnYes.setOnClickListener {
+          dbReference.child(userID).child("wasOnline").setValue(false)
+            val sessionManagement = SharePreference_Utils(view.context)
+            sessionManagement.removeSession()
             val intent = Intent(view?.context,LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
@@ -98,4 +132,30 @@ class AccountFragment : Fragment()  {
         alertDialog.setCanceledOnTouchOutside(false)
         alertDialog.show()
     }
+
+    fun getUser(snapshot: DataSnapshot) {
+        for (param in snapshot.children){
+            user = param.getValue(User::class.java)!!
+//            listUser.add(user)
+//            listUserKey.add(param.key.toString())
+        }
+    }
+
+    fun fetchDataAndUpdateUI(userID: String)  {
+       dbReference.child(userID)
+           .addListenerForSingleValueEvent(object : ValueEventListener{
+               override fun onCancelled(error: DatabaseError) {
+                  Log.d(TAG,"$error")
+               }
+               override fun onDataChange(snapshot: DataSnapshot) {
+                   var user = snapshot.getValue(User::class.java)
+                   if (user != null) {
+                       tvUserName.text = user.userName
+                       tvEmail.text = user.email
+                       tvphoneNum.text = user.phone
+                   }
+               }
+           })
+    }
+
 }

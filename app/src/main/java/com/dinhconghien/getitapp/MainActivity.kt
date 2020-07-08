@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import com.dinhconghien.getitapp.Screens.Account.AccountFragment
 import com.dinhconghien.getitapp.Screens.Home.HomeFragment
 import com.dinhconghien.getitapp.Screens.Invoice.InvoiceFragment
+import com.dinhconghien.getitapp.Screens.Login.LoginActivity
 import com.dinhconghien.getitapp.Screens.Message.MessageFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
 
 
     }
