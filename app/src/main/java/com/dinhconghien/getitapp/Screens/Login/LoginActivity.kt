@@ -192,8 +192,6 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else {
                     noti = "Đăng nhập thành công"
-//                    current_userKey = listUserKey[i]
-//                    current_userName = listUser[i].userName.toString()
                     dbReference.child(listUser[i].userID).child("wasOnline").setValue(true)
                     val sessionManagement = SharePreference_Utils(this@LoginActivity)
                     sessionManagement.saveSession(listUser,i)

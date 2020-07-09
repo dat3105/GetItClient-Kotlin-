@@ -117,7 +117,7 @@ class RegisterActivity : AppCompatActivity() {
         userName: String,
         password: String
     ) {
-        val userId: String = dbReference.push().getKey().toString()
+        val userId = dbReference.push().getKey().toString()
         dialogLoading = DialogLoading(this@RegisterActivity)
         dialogLoading!!.show()
         dbReference.orderByChild("email").equalTo(email)
@@ -145,7 +145,7 @@ class RegisterActivity : AppCompatActivity() {
                         return
                     } else {
                         try {
-                            user = User(userId,email,userName,phone,password,"Customer",false,true)
+                            user = User(userId,email,userName,phone,password,"Customer",false,true,avaUser,userAddress)
                             dbReference.child(userId).setValue(user)
                             CustomToast.makeText(
                                 this@RegisterActivity,

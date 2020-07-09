@@ -13,11 +13,11 @@ class User() : Serializable{
      var role : String = "Customer"
      var wasOnline : Boolean = false
      var wasFirstBuy : Boolean = true
-     var userAddress : String? = null
-     var avaUser : String? = null
-
+     var userAddress : String =""
+     var avaUser : String =""
+//register
     constructor(userID:String,email: String,userName:String,phone:String,password:String
-                ,role:String,wasOnline : Boolean,wasFirstBuy:Boolean) : this(){
+                ,role:String,wasOnline : Boolean,wasFirstBuy:Boolean,avaUser: String,address : String) : this(){
         this.userID =userID
         this.email = email
         this.userName = userName
@@ -26,5 +26,8 @@ class User() : Serializable{
         this.role = role
         this.wasOnline = wasOnline
         this.wasFirstBuy = wasFirstBuy
+        this.avaUser = avaUser
+        this.userAddress = address
     }
+
 }

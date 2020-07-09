@@ -69,6 +69,8 @@
         android:layout_marginHorizontal="15dp"
         android:background="@drawable/edittext_shape"
         android:hint="Số điện thoại"
+        android:inputType="number"
+        android:maxLength="10"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
 
@@ -79,6 +81,7 @@
         android:layout_margin="15dp"
         android:background="@drawable/edittext_shape"
         android:hint="Mật khẩu cũ"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
 
@@ -89,6 +92,7 @@
         android:layout_marginHorizontal="15dp"
         android:background="@drawable/edittext_shape"
         android:hint="Mật khẩu mới"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:fontFamily="@font/robotoregular"/>
 

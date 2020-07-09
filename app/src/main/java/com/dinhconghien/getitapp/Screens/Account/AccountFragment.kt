@@ -16,12 +16,14 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.User
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Login.LoginActivity
 import com.dinhconghien.getitapp.Utils.SharePreference_Utils
 import com.google.firebase.database.*
 import kotlinx.coroutines.*
+import java.lang.Exception
 
 
 class AccountFragment : Fragment()  {
@@ -36,11 +38,8 @@ class AccountFragment : Fragment()  {
     lateinit var btnLogout : LinearLayout
     var dbReference = FirebaseDatabase.getInstance().getReference().child("user")
      var userID =""
-    var user : User = User()
     var listUser = ArrayList<User>()
-    var listUserKey = ArrayList<String>()
     val TAG = "DbError_Account"
-    lateinit var job: Job
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,10 +47,9 @@ class AccountFragment : Fragment()  {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_account, container, false)
         init(view)
-        job = Job()
         var utils = SharePreference_Utils(view.context)
         userID = utils.getSession()
-        fetchDataAndUpdateUI(userID)
+        fetchDataAndUpdateUI(userID,view)
 
         btnEdit.setOnClickListener {
             val intent = Intent(view?.context,EditAccount_Activity::class.java)
@@ -74,25 +72,6 @@ class AccountFragment : Fragment()  {
         return view
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        job.cancel()
-    }
-
-    private fun updateUI(){
-        var userName = ""
-        var email = ""
-        var phone = ""
-        for(i in 0 until  listUser.size){
-            userName = listUser[i].userName
-            email = listUser[i].email
-            phone = listUser[i].phone
-        }
-        tvUserName.text = userName
-        tvEmail.text =email
-        tvphoneNum.text = phone
-    }
-
     private fun init(view: View){
         imvAva = view.findViewById(R.id.imv_avatar_accountScreen)
         tvUserName = view.findViewById(R.id.tv_username_accountScreen)
@@ -104,6 +83,7 @@ class AccountFragment : Fragment()  {
         btnAboutUs = view.findViewById(R.id.linear_aboutUs_accountScreen)
         btnLogout = view.findViewById(R.id.linear_logOut_accountScreen)
     }
+
     fun showCustomDialog(view: View) {
         val viewGroup = view.findViewById<ViewGroup>(android.R.id.content)
         val dialogView: View = LayoutInflater.from(view.context).inflate(R.layout.dialog_logout, viewGroup, false)
@@ -133,15 +113,7 @@ class AccountFragment : Fragment()  {
         alertDialog.show()
     }
 
-    fun getUser(snapshot: DataSnapshot) {
-        for (param in snapshot.children){
-            user = param.getValue(User::class.java)!!
-//            listUser.add(user)
-//            listUserKey.add(param.key.toString())
-        }
-    }
-
-    fun fetchDataAndUpdateUI(userID: String)  {
+    fun fetchDataAndUpdateUI(userID: String,view: View)  {
        dbReference.child(userID)
            .addListenerForSingleValueEvent(object : ValueEventListener{
                override fun onCancelled(error: DatabaseError) {
@@ -150,9 +122,23 @@ class AccountFragment : Fragment()  {
                override fun onDataChange(snapshot: DataSnapshot) {
                    var user = snapshot.getValue(User::class.java)
                    if (user != null) {
-                       tvUserName.text = user.userName
-                       tvEmail.text = user.email
-                       tvphoneNum.text = user.phone
+                       try {
+                           if (user.avaUser == "no information") {
+                               tvUserName.text = user.userName
+                               tvEmail.text = user.email
+                               tvphoneNum.text = user.phone
+                               imvAva.setImageResource(R.drawable.ic_person)
+                           }
+                           else{
+                               tvUserName.text = user.userName
+                               tvEmail.text = user.email
+                               tvphoneNum.text = user.phone
+                               Glide.with(view.context).load(user.avaUser).fitCenter().into(imvAva)
+                           }
+                       }catch (e:Exception){
+                           e.printStackTrace()
+                       }
+
                    }
                }
            })
