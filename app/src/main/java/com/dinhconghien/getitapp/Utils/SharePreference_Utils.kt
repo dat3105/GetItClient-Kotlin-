@@ -19,11 +19,9 @@ class SharePreference_Utils(context: Context) {
         editor.putString(SESSION_KEY, userID).commit()
     }
 
-
     fun getSession(): String {
         return sharedPreferences.getString(SESSION_KEY, "").toString()
     }
-
 
     fun removeSession() {
        editor.clear().commit()

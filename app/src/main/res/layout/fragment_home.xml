@@ -1,91 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/swipeRL_Home"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Screens.Home.HomeFragment">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/menuscreen"
-        android:layout_marginBottom="30dp"
-        android:orientation="vertical">
-
-        <RelativeLayout
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_welcome_home"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:layout_marginLeft="15dp"/>
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/imv_cart_homeScreen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_carthome"
-                android:background="@drawable/button_image_shape"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
-                />
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp"
+            android:background="@drawable/menuscreen"
+            android:orientation="vertical">
 
-        </RelativeLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_slider_homeScreen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            app:cardCornerRadius="7dp">
-
-            <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/imageSlider"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                app:sliderAnimationDuration="600"
-                app:sliderAutoCycleDirection="back_and_forth"
-                app:sliderIndicatorAnimationDuration="600"
-                app:sliderIndicatorEnabled="true"
-                app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMargin="15dp"
-                app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="3dp"
-                app:sliderIndicatorRadius="2dp"
-                app:sliderIndicatorSelectedColor="@color/mainColor"
-                app:sliderIndicatorUnselectedColor="#FFF"
-                app:sliderScrollTimeInSec="1" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp">
 
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/tv_welcome_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reclerView_itemBrandName_homeScreen"
-        android:layout_margin="15dp"
-      />
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/imv_cart_homeScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/button_image_shape"
+                    android:src="@drawable/icon_carthome" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_slider_homeScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                app:cardCornerRadius="7dp">
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorEnabled="true"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="@color/mainColor"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reclerView_itemBrandName_homeScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp" />
 
 
-<TextView
-    android:layout_width="140dp"
-    android:layout_height="37dp"
-    android:text="SẢN PHẨM HOT"
-    android:background="@drawable/title_home_shape"
-    android:layout_marginTop="15dp"
-    android:gravity="center"
-    android:textColor="@color/mainColor"
-    android:textSize="12sp"
-    android:fontFamily="@font/robotoregular"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_margin="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/reclerView_itemHot_homeScreen"/>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/title_home_shape"
+                android:fontFamily="@font/robotoregular"
+                android:gravity="center"
+                android:text="SẢN PHẨM HOT"
+                android:textColor="@color/mainColor"
+                android:textSize="12sp" />
 
-    </LinearLayout>
-</ScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reclerView_itemHot_homeScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

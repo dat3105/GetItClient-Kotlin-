@@ -10,9 +10,7 @@ import android.widget.Toast
 import com.dinhconghien.getitapp.R
 
 class CustomToast(context: Context?) : Toast(context) {
-    var SUCCESS = 1
-    var WARNING = 2
-    var ERROR = 3
+
 companion object{
     fun makeText(
         context: Context?,

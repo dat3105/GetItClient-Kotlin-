@@ -1,6 +1,4 @@
 package com.dinhconghien.getitapp.Models
-
-import android.provider.ContactsContract
 import java.io.Serializable
 
 

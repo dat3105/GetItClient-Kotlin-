@@ -38,13 +38,6 @@ class LoginActivity : AppCompatActivity() {
     lateinit var job: Job
     var TAG = "Check user login"
 
-
-
-    companion object {
-        var current_userKey: String? = null
-        var current_userName: String? = null
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -80,10 +73,6 @@ class LoginActivity : AppCompatActivity() {
         tv_forgotPass_loginScreen.setOnClickListener {
             val intent = Intent(this, GetBackPassActivity::class.java)
             startActivity(intent)
-        }
-
-        cb_remember_loginScreen.setOnCheckedChangeListener { buttonView, isChecked ->
-
         }
 
     }

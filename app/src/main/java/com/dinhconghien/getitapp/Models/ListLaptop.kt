@@ -1,11 +1,14 @@
 package com.dinhconghien.getitapp.Models
 
-class ListLaptop(
-    val avatarLap : Int ,
-    val nameLap : String,
-    val rating : Int,
-    val priceLap : Int,
-    val brandLapName: String,
-    val amountLap : Int
+data class ListLaptop(
+    val idLap : String ="",
+    var idBrandLap : String = "",
+    var nameLap : String = "",
+    var priceLap : Int = 0,
+    var quantity : Int =0,
+    var avaLap : String ="",
+    var rating : Int = 0,
+    var amountRating : Int = 0,
+    var amountSell : Int = 0
 ) {
 }

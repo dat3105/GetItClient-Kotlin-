@@ -11,10 +11,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.dinhconghien.getitapp.Adapter.BrandLapName_Adapter
 import com.dinhconghien.getitapp.Adapter.SliderImage_Adapter
 import com.dinhconghien.getitapp.Models.BrandLapName
@@ -22,7 +24,8 @@ import com.dinhconghien.getitapp.Models.SliderImage
 import com.dinhconghien.getitapp.Models.User
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Cart.CartActivity
-import com.dinhconghien.getitapp.Screens.Login.LoginActivity
+import com.dinhconghien.getitapp.UI.CustomToast
+import com.dinhconghien.getitapp.UI.DialogLoading
 import com.dinhconghien.getitapp.Utils.SharePreference_Utils
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -31,6 +34,10 @@ import com.google.firebase.database.ValueEventListener
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -40,12 +47,14 @@ class HomeFragment : Fragment() {
     lateinit var tv_welcome : TextView
     lateinit var adapterBrandLap: BrandLapName_Adapter
     lateinit var reclerView_brandLap: RecyclerView
-    lateinit var brandLap: BrandLapName
+    lateinit var swipeRL : SwipeRefreshLayout
     var listBrandName = ArrayList<BrandLapName>()
     lateinit var imv_cart: ImageView
     val TAG = "Check HomeFragment 's Lifecycle"
     val listSliderTAG = "Check list Slider"
-    var dbReference = FirebaseDatabase.getInstance().getReference().child("user")
+    var dbReference = FirebaseDatabase.getInstance().getReference("user")
+    val DB_BRANDLAP = FirebaseDatabase.getInstance().getReference("brandLap")
+
     @SuppressLint("LongLogTag")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,10 +62,10 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         initComponents(view)
+        GlobalScope.launch(Dispatchers.Main) {  updateUI(view)  }
         adapterImageSlider = SliderImage_Adapter(view.context, listImageSlider)
         initForSliderImage()
         Log.d(TAG, "OncreateView is being called !")
-        getBrandNameItem(view)
 
         imv_cart.setOnClickListener {
             val intent = Intent(
@@ -69,7 +78,7 @@ class HomeFragment : Fragment() {
         var current_userID = utils.getSession()
         dbReference.child(current_userID).addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.d("DbErrorHome",error.toString())
             }
             override fun onDataChange(snapshot: DataSnapshot) {
                var user = snapshot.getValue(User::class.java)
@@ -79,6 +88,12 @@ class HomeFragment : Fragment() {
 
             }
         })
+
+        swipeRL.setOnRefreshListener {
+            swipeRL.isRefreshing = false
+            GlobalScope.launch(Dispatchers.Main) {   updateUI(view) }
+
+        }
         return view
     }
 
@@ -87,6 +102,32 @@ class HomeFragment : Fragment() {
         reclerView_brandLap = view.findViewById(R.id.reclerView_itemBrandName_homeScreen)
         imv_cart = view.findViewById(R.id.imv_cart_homeScreen)
         tv_welcome = view.findViewById(R.id.tv_welcome_home)
+        swipeRL = view.findViewById(R.id.swipeRL_Home)
+    }
+
+    private fun getBrand(){
+       DB_BRANDLAP.addValueEventListener(object : ValueEventListener{
+           override fun onCancelled(error: DatabaseError) {
+               Log.d("DbErrorBrandHome",error.toString())
+           }
+           override fun onDataChange(snapshot: DataSnapshot) {
+               for (param in snapshot.children){
+                       listBrandName.clear()
+                       getBrandModel(snapshot)
+                       adapterBrandLap.setListBrand(listBrandName)
+                       Log.v("Check size listBrand","${listBrandName.size}")
+
+               }
+           }
+       })
+    }
+
+
+    fun getBrandModel(snapShot: DataSnapshot) {
+        for (param in snapShot.children) {
+            var brandModel = param.getValue(BrandLapName::class.java)!!
+            listBrandName.add(brandModel)
+        }
     }
 
     private fun initForSliderImage() {
@@ -100,14 +141,21 @@ class HomeFragment : Fragment() {
         sliderView.startAutoCycle()
     }
 
+        suspend fun updateUI(view: View){
+        val dialogLoading = DialogLoading(view.context)
+        dialogLoading.show()
+            delay(800L)
+        getBrandNameItem(view)
+        dialogLoading.dismiss()
+    }
+
     private fun getBrandNameItem(view: View) {
         adapterBrandLap = BrandLapName_Adapter(view.context, listBrandName)
-        val gridLayoutManager =
-            GridLayoutManager(view.context, 3, LinearLayoutManager.VERTICAL, false)
+        val gridLayoutManager = GridLayoutManager(view.context, 3, LinearLayoutManager.VERTICAL, false)
         reclerView_brandLap.layoutManager = gridLayoutManager
         reclerView_brandLap.setHasFixedSize(true)
+        getBrand()
         reclerView_brandLap.adapter = adapterBrandLap
-
     }
 
     private fun addImageSliderItems() {
@@ -131,46 +179,11 @@ class HomeFragment : Fragment() {
         Log.d(listSliderTAG, "Current size is ${listImageSlider.size}")
     }
 
-    // add brandLap items for inspection
-    private fun addBrandLapItem() {
-        brandLap = BrandLapName(R.drawable.hp, "Laptop HP")
-        listBrandName.add(brandLap)
-
-        brandLap = BrandLapName(R.drawable.dell, "Laptop Dell")
-        listBrandName.add(brandLap)
-
-        brandLap = BrandLapName(R.drawable.acer, "Laptop Acer")
-        listBrandName.add(brandLap)
-
-        brandLap = BrandLapName(R.drawable.lenovo, "Laptop Lenovo")
-        listBrandName.add(brandLap)
-
-        brandLap = BrandLapName(R.drawable.mac, "Laptop Mac")
-        listBrandName.add(brandLap)
-
-        brandLap = BrandLapName(R.drawable.asus, "Laptop Asus")
-        listBrandName.add(brandLap)
-
-    }
-
     @SuppressLint("LongLogTag")
     override fun onAttach(context: Context) {
         super.onAttach(context)
         addImageSliderItems()
-        addBrandLapItem()
         Log.d(TAG, "OnAttach is being called !")
-    }
-
-    @SuppressLint("LongLogTag")
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        Log.d(TAG, "onActivityCreated is being called !")
-    }
-
-    @SuppressLint("LongLogTag")
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG, "onStart is being called !")
     }
 
     @SuppressLint("LongLogTag")

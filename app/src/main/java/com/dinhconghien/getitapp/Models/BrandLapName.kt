@@ -1,4 +1,12 @@
 package com.dinhconghien.getitapp.Models
 
-class BrandLapName(val avatarBrandLapName : Int , val brandLapName : String) {
+import java.util.*
+
+data class BrandLapName(var idBrandLap: String = "",
+          var nameBrand : String = "",
+          var avaBrandLap : String = ""
+) {
+    override fun toString(): String {
+        return nameBrand.toUpperCase(Locale.ENGLISH)
+    }
 }

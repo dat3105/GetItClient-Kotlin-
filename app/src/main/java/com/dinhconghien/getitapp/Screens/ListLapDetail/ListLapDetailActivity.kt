@@ -47,7 +47,6 @@ class ListLapDetailActivity : AppCompatActivity() ,View.OnClickListener{
         adapterImageSlider = SliderImage_Adapter(this, listImageSlider)
         addImageSliderItems()
 
-        addLapItem()
     }
 
      fun showCustomDialog(view: View) {
@@ -101,32 +100,6 @@ class ListLapDetailActivity : AppCompatActivity() ,View.OnClickListener{
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
         sliderView.autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_RIGHT
         sliderView.indicatorUnselectedColor = Color.GRAY
-    }
-
-    private fun addLapItem(){
-        listLaptop = ListLaptop(R.drawable.avatarlaptop,"Vostro",
-            4,12000000,"Laptop Dell",10)
-        dsLap.add(listLaptop)
-
-        listLaptop = ListLaptop(R.drawable.avatarlaptop,"Pavillon",
-            5,12000000,"Laptop Dell",10)
-        dsLap.add(listLaptop)
-
-        listLaptop = ListLaptop(R.drawable.avatarlaptop,"RTX",
-            3,12000000,"Laptop Dell",10)
-        dsLap.add(listLaptop)
-
-        listLaptop = ListLaptop(R.drawable.avatarlaptop,"LCD",
-            3,12000000,"Laptop Dell",10)
-        dsLap.add(listLaptop)
-
-        listLaptop = ListLaptop(R.drawable.avatarlaptop,"MVVM",
-            3,12000000,"Laptop Dell",10)
-        dsLap.add(listLaptop)
-
-        listLaptop = ListLaptop(R.drawable.avatarlaptop,"Vostro",
-            3,12000000,"Laptop Dell",10)
-        dsLap.add(listLaptop)
     }
 
     private fun getLapItem() {

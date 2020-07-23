@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.dinhconghien.getitapp.Models.BrandLapName
 import com.dinhconghien.getitapp.Models.Cart
 import com.dinhconghien.getitapp.R
 

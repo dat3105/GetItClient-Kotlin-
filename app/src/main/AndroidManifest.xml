@@ -12,41 +12,62 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Screens.Message.MessageContent_Activity"
-      >
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden">
         </activity>
         <activity
             android:name=".Screens.Account.AboutUs_Activity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Screens.Account.EditAccount_Activity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Screens.Account.EditAccount_Activity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden"/>
         <activity
             android:name=".Screens.Invoice.InvoiceAcceptedDetail_Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".Screens.Cart.PaymentActivity"
-            android:parentActivityName=".Screens.Cart.CartActivity" />
+            android:parentActivityName=".Screens.Cart.CartActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden"/>
         <activity
             android:name=".Screens.Invoice.InvoiceWatingDetail_Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Screens.ListLapDetail.ListLapDetailActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Screens.ListLaptop.ListLaptopActivity"
-            android:parentActivityName=".MainActivity" />
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden"/>
         <activity
             android:name=".Screens.Cart.CartActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Screens.GetBackPassword.GetBackPassActivity" />
-        <activity android:name=".Screens.Register.RegisterActivity" />
-        <activity android:name=".Screens.Login.LoginActivity" />
-        <activity android:name=".Screens.Splash.SplashActivity">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden"/>
+        <activity android:name=".Screens.GetBackPassword.GetBackPassActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden"/>
+        <activity android:name=".Screens.Register.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden"/>
+        <activity android:name=".Screens.Login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden"/>
+        <activity android:name=".Screens.Splash.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

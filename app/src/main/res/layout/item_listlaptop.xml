@@ -4,13 +4,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardCornerRadius="7dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:background="@drawable/button_image_shape"
         android:paddingBottom="15dp"
         >
         <ImageView
@@ -41,37 +42,18 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="5dp"
-            android:isIndicator="true"
            android:theme="@style/RatingBar"
             android:layout_below="@+id/tv_nameLaptop_listLapItem"
             android:layout_centerInParent="true"
             android:scaleX="0.3"
             android:scaleY="0.3"
             android:stepSize="0.1" />
-        <TextView
-            android:id="@+id/tv_brandName_listLapItem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ratingBar_listLapItem"
-            android:fontFamily="@font/robotoregular"
-            android:text="Laptop Dell"
-            android:textStyle="normal"
-            android:layout_centerInParent="true"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/tv_brandName_listLapItem"
-            android:layout_centerInParent="true"
-            >
             <TextView
                 android:id="@+id/tv_priceLap_listLapItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ratingBar_listLapItem"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/robotoregular"
                 android:textColor="@color/red"
@@ -83,7 +65,8 @@
                 android:id="@+id/tv_amountLap_listLapItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ratingBar_listLapItem"
+                android:layout_below="@id/tv_priceLap_listLapItem"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/robotoregular"
@@ -92,7 +75,6 @@
                 android:textStyle="normal"
                 android:textSize="8sp"
                 />
-        </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

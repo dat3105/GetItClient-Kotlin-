@@ -14,17 +14,22 @@ import com.dinhconghien.getitapp.Models.BrandLapName
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.ListLaptop.ListLaptopActivity
 
-class BrandLapName_Adapter(val context: Context , val listBrandLapName : ArrayList<BrandLapName>) : RecyclerView.Adapter<BrandLapName_Adapter.ViewHolder>() {
-    lateinit var myContext: Context
+class BrandLapName_Adapter(var context: Context, var listBrandLapName : ArrayList<BrandLapName>)
+    : RecyclerView.Adapter<BrandLapName_Adapter.ViewHolder>() {
+
+    fun setListBrand(listBrand : ArrayList<BrandLapName>){
+        this.listBrandLapName = listBrand
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
         val inflate: View = LayoutInflater.from(context).inflate(R.layout.item_brandlaptop, null)
-        myContext = parent.context
+        context = parent.context
         return ViewHolder(inflate)
     }
-
 
     override fun getItemCount(): Int {
         return listBrandLapName.size
@@ -32,16 +37,17 @@ class BrandLapName_Adapter(val context: Context , val listBrandLapName : ArrayLi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
          val brandLap = listBrandLapName.get(position)
-         holder.tv_brandNameLap.text = brandLap.brandLapName
+         holder.tv_brandNameLap.text = brandLap.nameBrand.toUpperCase()
          Glide.with(holder.itemView)
-             .load(brandLap.avatarBrandLapName)
+             .load(brandLap.avaBrandLap)
              .fitCenter()
              .into(holder.imv_avatarBrandLap)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(myContext,ListLaptopActivity::class.java)
-            intent.putExtra("brandLapName", brandLap.brandLapName)
-            myContext.startActivity(intent)
+            val intent = Intent(context,ListLaptopActivity::class.java)
+            intent.putExtra("idBrandLap", brandLap.idBrandLap)
+            intent.putExtra("brandLapName",brandLap.nameBrand)
+            context.startActivity(intent)
         }
     }
 

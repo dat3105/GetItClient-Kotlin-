@@ -145,7 +145,8 @@ class RegisterActivity : AppCompatActivity() {
                         return
                     } else {
                         try {
-                            user = User(userId,email,userName,phone,password,"Customer",false,true,avaUser,userAddress)
+                            user = User(userId,email,userName,phone,password,"Customer",false,
+                                true,avaUser,userAddress)
                             dbReference.child(userId).setValue(user)
                             CustomToast.makeText(
                                 this@RegisterActivity,
