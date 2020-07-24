@@ -75,6 +75,7 @@
                     android:textColor="@color/blurblack"
                     android:textSize="20sp"
                     android:textStyle="normal" />
+
                 <TextView
                     android:id="@+id/tv_kindOfCPU_infoLapDetail_dialog"
                     android:layout_width="wrap_content"
@@ -159,39 +160,6 @@
                 android:layout_height="0.1dp"
                 android:background="@color/blurblack"/>
             <!--   field 3     -->
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Loại CPU"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-                <TextView
-                    android:id="@+id/tv_brandCPU_infoLapDetail_dialog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Bộ xử lí"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-            </RelativeLayout>
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/blurblack"/>
-            <!--   field 4     -->
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -374,122 +342,11 @@
                 android:background="@color/blurblack"/>
             <!-- RAM  field 4     -->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/robotoblack"
-                android:text="Màn hình"
-                android:textStyle="bold"
-                android:textColor="@color/red"
-                android:textSize="20sp"
-                />
-
             <View
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
                 android:background="@color/blurblack"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Kích thước :"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-                <TextView
-                    android:id="@+id/tv_sizeOfScreen_infoLapDetail_dialog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Bộ xử lí"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-            </RelativeLayout>
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/blurblack"/>
-<!--     màn hình field 1       -->
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Độ phân giải :"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-                <TextView
-                    android:id="@+id/tv_dimensionOfScreen_infoLapDetail_dialog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Bộ xử lí"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-            </RelativeLayout>
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/blurblack"/>
-            <!--     màn hình field 2       -->
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Công nghệ :"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-                <TextView
-                    android:id="@+id/tv_techScreen_infoLapDetail_dialog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Bộ xử lí"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-            </RelativeLayout>
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/blurblack"/>
-            <!--     màn hình field 3       -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -508,39 +365,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
                 android:background="@color/blurblack"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Thời gian :"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-                <TextView
-                    android:id="@+id/tv_timeOfGuarantee_infoLapDetail_dialog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Bộ xử lí"
-                    android:textColor="@color/blurblack"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-            </RelativeLayout>
-            <View
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/blurblack"/>
-            <!--     Bảo hành và xuất xứ field 1       -->
 
             <RelativeLayout
                 android:layout_width="match_parent"

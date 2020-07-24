@@ -1,5 +1,6 @@
 package com.dinhconghien.getitapp.Adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -22,18 +23,16 @@ import kotlin.collections.ArrayList
 
 class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLaptop>) :
     RecyclerView.Adapter<ListLaptop_Adapter.ViewHolder>() , Filterable {
-
     var listLapFilter = ArrayList<ListLaptop>()
-
     fun setListLapTop(listLap: ArrayList<ListLaptop>){
         this.listLap = listLap
         this.listLapFilter = listLap
         notifyDataSetChanged()
     }
-
     init {
         listLapFilter = listLap
     }
+    @SuppressLint("InflateParams")
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -44,14 +43,27 @@ class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLapt
     }
 
     override fun getItemCount(): Int {
-       return listLapFilter.size
+            return listLapFilter.size
     }
 
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listLapItem = listLapFilter.get(position)
         holder.tv_nameLap.text = listLapItem.nameLap
-        holder.tv_priceLap.text = "${listLapItem.priceLap} VNĐ"
+        var priceLap = listLapItem.priceLap.toString()
+        if (priceLap.length == 7){
+            val firstChar = priceLap.substring(0,1)
+            val middleChar = priceLap.substring(1,4)
+            val lastChar = priceLap.substring(3,6)
+            priceLap = "$firstChar.$middleChar.$lastChar"
+        }else if (priceLap.length == 8){
+            val firstChar = priceLap.substring(0,2)
+            val middleChar = priceLap.substring(2,5)
+            val lastChar = priceLap.substring(4,7)
+            priceLap = "$firstChar.$middleChar.$lastChar"
+        }
+        holder.tv_priceLap.text = "$priceLap VNĐ"
         holder.tv_amountLap.text = "Số lượng : ${listLapItem.quantity} chiếc"
         Glide.with(holder.itemView)
             .load(listLapItem.avaLap)
@@ -64,13 +76,6 @@ class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLapt
             val intent = Intent(context, ListLapDetailActivity::class.java)
             intent.putExtra("idLap",listLapItem.idLap)
             intent.putExtra("idBrandLap",listLapItem.idBrandLap)
-            intent.putExtra("nameLap",listLapItem.nameLap)
-            intent.putExtra("priceLap",listLapItem.priceLap)
-            intent.putExtra("quantity",listLapItem.quantity)
-            intent.putExtra("avaLap",listLapItem.avaLap)
-            intent.putExtra("rating",listLapItem.rating)
-            intent.putExtra("amountRating",listLapItem.amountRating)
-            intent.putExtra("amountSell",listLapItem.amountSell)
             context.startActivity(intent)
         }
     }

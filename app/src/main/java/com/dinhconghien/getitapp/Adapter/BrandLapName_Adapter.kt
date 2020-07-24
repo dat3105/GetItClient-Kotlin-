@@ -46,7 +46,6 @@ class BrandLapName_Adapter(var context: Context, var listBrandLapName : ArrayLis
         holder.itemView.setOnClickListener {
             val intent = Intent(context,ListLaptopActivity::class.java)
             intent.putExtra("idBrandLap", brandLap.idBrandLap)
-            intent.putExtra("brandLapName",brandLap.nameBrand)
             context.startActivity(intent)
         }
     }

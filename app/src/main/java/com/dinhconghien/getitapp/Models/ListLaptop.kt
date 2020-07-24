@@ -9,6 +9,7 @@ data class ListLaptop(
     var avaLap : String ="",
     var rating : Int = 0,
     var amountRating : Int = 0,
-    var amountSell : Int = 0
+    var amountSell : Int = 0,
+    var nameBrand : String = ""
 ) {
 }

@@ -1,10 +1,8 @@
 package com.dinhconghien.getitapp.Models
 
-class Cart(
-val avatarLap : Int ,
-val nameLap : String ,
-val brandLapName: String,
-val priceOfLap: Int,
-val amountOfLap: Int
+data class Cart(
+    var idUser : String = "",
+    var addressOrder : String = "",
+    var listLapOrder : ArrayList<ListLaptop> = ArrayList()
 ) {
 }

@@ -1,0 +1,10 @@
+package com.dinhconghien.getitapp.Models
+
+data class Bot(
+val avatarLap : Int ,
+val nameLap : String ,
+val brandLapName: String,
+val priceOfLap: Int,
+val amountOfLap: Int
+) {
+}

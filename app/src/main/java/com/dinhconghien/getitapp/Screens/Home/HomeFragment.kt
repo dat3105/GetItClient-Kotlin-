@@ -19,9 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.dinhconghien.getitapp.Adapter.BrandLapName_Adapter
 import com.dinhconghien.getitapp.Adapter.SliderImage_Adapter
-import com.dinhconghien.getitapp.Models.BrandLapName
-import com.dinhconghien.getitapp.Models.SliderImage
-import com.dinhconghien.getitapp.Models.User
+import com.dinhconghien.getitapp.Models.*
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Cart.CartActivity
 import com.dinhconghien.getitapp.UI.CustomToast
@@ -41,19 +39,25 @@ import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
+
     lateinit var sliderView: SliderView
     lateinit var adapterImageSlider: SliderImage_Adapter
     var listImageSlider = ArrayList<SliderImage>()
-    lateinit var tv_welcome : TextView
+    lateinit var tv_welcome: TextView
     lateinit var adapterBrandLap: BrandLapName_Adapter
     lateinit var reclerView_brandLap: RecyclerView
-    lateinit var swipeRL : SwipeRefreshLayout
+    lateinit var swipeRL: SwipeRefreshLayout
+    lateinit var tv_amountCart : TextView
     var listBrandName = ArrayList<BrandLapName>()
     lateinit var imv_cart: ImageView
     val TAG = "Check HomeFragment 's Lifecycle"
     val listSliderTAG = "Check list Slider"
     var dbReference = FirebaseDatabase.getInstance().getReference("user")
     val DB_BRANDLAP = FirebaseDatabase.getInstance().getReference("brandLap")
+    val DB_CART = FirebaseDatabase.getInstance().getReference("cart")
+    var listCart = ArrayList<Cart>()
+    var listLapOrder = ArrayList<ListLaptop>()
+    lateinit var current_userID : String
 
     @SuppressLint("LongLogTag")
     override fun onCreateView(
@@ -62,7 +66,10 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         initComponents(view)
-        GlobalScope.launch(Dispatchers.Main) {  updateUI(view)  }
+        val utils = SharePreference_Utils(view.context)
+        current_userID = utils.getSession()
+        getListCart()
+        GlobalScope.launch(Dispatchers.Main) { updateUI(view) }
         adapterImageSlider = SliderImage_Adapter(view.context, listImageSlider)
         initForSliderImage()
         Log.d(TAG, "OncreateView is being called !")
@@ -74,24 +81,23 @@ class HomeFragment : Fragment() {
             )
             startActivity(intent)
         }
-        var utils = SharePreference_Utils(view.context)
-        var current_userID = utils.getSession()
-        dbReference.child(current_userID).addListenerForSingleValueEvent(object : ValueEventListener{
-            override fun onCancelled(error: DatabaseError) {
-                Log.d("DbErrorHome",error.toString())
-            }
-            override fun onDataChange(snapshot: DataSnapshot) {
-               var user = snapshot.getValue(User::class.java)
-                if (user != null){
-                    tv_welcome.text = "Xin chào,${user.userName}"
+        dbReference.child(current_userID)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {
+                    Log.d("DbErrorHome", error.toString())
                 }
-
-            }
-        })
+                @SuppressLint("SetTextI18n")
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val user = snapshot.getValue(User::class.java)
+                    if (user != null) {
+                        tv_welcome.text = "Xin chào,${user.userName}"
+                    }
+                }
+            })
 
         swipeRL.setOnRefreshListener {
             swipeRL.isRefreshing = false
-            GlobalScope.launch(Dispatchers.Main) {   updateUI(view) }
+            GlobalScope.launch(Dispatchers.Main) { updateUI(view) }
 
         }
         return view
@@ -103,23 +109,24 @@ class HomeFragment : Fragment() {
         imv_cart = view.findViewById(R.id.imv_cart_homeScreen)
         tv_welcome = view.findViewById(R.id.tv_welcome_home)
         swipeRL = view.findViewById(R.id.swipeRL_Home)
+        tv_amountCart = view.findViewById(R.id.tv_amountListCart_homeScreen)
     }
 
-    private fun getBrand(){
-       DB_BRANDLAP.addValueEventListener(object : ValueEventListener{
-           override fun onCancelled(error: DatabaseError) {
-               Log.d("DbErrorBrandHome",error.toString())
-           }
-           override fun onDataChange(snapshot: DataSnapshot) {
-               for (param in snapshot.children){
-                       listBrandName.clear()
-                       getBrandModel(snapshot)
-                       adapterBrandLap.setListBrand(listBrandName)
-                       Log.v("Check size listBrand","${listBrandName.size}")
+    private fun getBrand() {
+        DB_BRANDLAP.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                Log.d("DbErrorBrandHome", error.toString())
+            }
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (param in snapshot.children) {
+                    listBrandName.clear()
+                    getBrandModel(snapshot)
+                    adapterBrandLap.setListBrand(listBrandName)
+                    Log.v("Check size listBrand", "${listBrandName.size}")
 
-               }
-           }
-       })
+                }
+            }
+        })
     }
 
 
@@ -141,17 +148,19 @@ class HomeFragment : Fragment() {
         sliderView.startAutoCycle()
     }
 
-        suspend fun updateUI(view: View){
+    suspend fun updateUI(view: View) {
         val dialogLoading = DialogLoading(view.context)
         dialogLoading.show()
-            delay(800L)
+        delay(800L)
         getBrandNameItem(view)
+        checkListCart()
         dialogLoading.dismiss()
     }
 
     private fun getBrandNameItem(view: View) {
         adapterBrandLap = BrandLapName_Adapter(view.context, listBrandName)
-        val gridLayoutManager = GridLayoutManager(view.context, 3, LinearLayoutManager.VERTICAL, false)
+        val gridLayoutManager =
+            GridLayoutManager(view.context, 3, LinearLayoutManager.VERTICAL, false)
         reclerView_brandLap.layoutManager = gridLayoutManager
         reclerView_brandLap.setHasFixedSize(true)
         getBrand()
@@ -177,6 +186,36 @@ class HomeFragment : Fragment() {
         val sliderImage6 = SliderImage(R.drawable.laptoplenovo_slider, "Laptop Lenovo")
         listImageSlider.add(sliderImage6)
         Log.d(listSliderTAG, "Current size is ${listImageSlider.size}")
+    }
+
+    private fun checkListCart(){
+        if(listLapOrder.size > 0){
+            tv_amountCart.visibility = View.VISIBLE
+            tv_amountCart.text = listLapOrder.size.toString()
+        }else{
+            tv_amountCart.visibility = View.GONE
+        }
+    }
+
+    private fun getListCart(){
+        DB_CART.orderByChild("idUser").equalTo(current_userID).addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+                Log.d("DbError_getListCartHome",error.toString())
+            }
+            override fun onDataChange(snapshot: DataSnapshot) {
+                listLapOrder.clear()
+                getModelCart(snapshot)
+            }
+        })
+    }
+
+    private fun getModelCart(snapShot: DataSnapshot){
+        for (param in snapShot.children){
+            val cartModel = param.getValue(Cart::class.java)
+            if (cartModel != null){
+                listLapOrder = cartModel.listLapOrder
+            }
+        }
     }
 
     @SuppressLint("LongLogTag")

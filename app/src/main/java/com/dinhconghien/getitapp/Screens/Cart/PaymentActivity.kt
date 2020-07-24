@@ -3,12 +3,9 @@ package com.dinhconghien.getitapp.Screens.Cart
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dinhconghien.getitapp.Adapter.Cart_Adapter
 import com.dinhconghien.getitapp.Adapter.ListLapPayment_Adapter
-import com.dinhconghien.getitapp.Models.Cart
 import com.dinhconghien.getitapp.Models.ListLapPayment
 import com.dinhconghien.getitapp.R
-import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.activity_payment.*
 
 class PaymentActivity : AppCompatActivity() {

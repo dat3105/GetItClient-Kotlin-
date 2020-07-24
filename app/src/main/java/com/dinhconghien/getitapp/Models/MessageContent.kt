@@ -5,6 +5,5 @@ class MessageContent(
     var isMe : Boolean ,
     val date : String,
     val avaGuest : Int? = null
-
 ) {
 }
