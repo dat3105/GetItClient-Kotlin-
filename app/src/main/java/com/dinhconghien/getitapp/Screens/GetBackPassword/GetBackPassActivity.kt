@@ -150,7 +150,7 @@ class GetBackPassActivity : AppCompatActivity() {
             var password = ""
             for (i in 0 until listUser.size) {
                 if (listUser[i].email.equals(email) && listUser[i].phone.equals(phone)) {
-                    password = listUser[i].password
+                    password = listUser[i].password!!
                 }
             }
         return password

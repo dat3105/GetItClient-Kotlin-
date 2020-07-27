@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
     var dbReference = FirebaseDatabase.getInstance().getReference().child("user")
     var listUser = ArrayList<User>()
     var listUserKey = ArrayList<String>()
-     var user : User = User()
+//     lateinit var user : User
     lateinit var job: Job
     var TAG = "Check user login"
 
@@ -166,7 +166,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun getUser(snapShot: DataSnapshot) {
         for (param in snapShot.children) {
-            user = param.getValue(User::class.java)!!
+            val user = param.getValue(User::class.java)!!
             listUser.add(user)
             listUserKey.add(param.key.toString())
         }
@@ -181,7 +181,7 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else {
                     noti = "Đăng nhập thành công"
-                    dbReference.child(listUser[i].userID).child("wasOnline").setValue(true)
+                    dbReference.child(listUser[i].userID!!).child("wasOnline").setValue(true)
                     val sessionManagement = SharePreference_Utils(this@LoginActivity)
                     sessionManagement.saveSession(listUser,i)
                 }

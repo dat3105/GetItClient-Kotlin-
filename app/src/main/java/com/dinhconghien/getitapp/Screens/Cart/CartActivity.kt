@@ -9,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dinhconghien.getitapp.Adapter.Cart_Adapter
+import com.dinhconghien.getitapp.Models.BrandLapName
 import com.dinhconghien.getitapp.Models.Cart
 import com.dinhconghien.getitapp.Models.ListLaptop
 import com.dinhconghien.getitapp.R
@@ -81,8 +82,6 @@ class CartActivity : AppCompatActivity() {
                 listCart.clear()
                 listLapOrder.clear()
                 getCartModel(snapshot)
-
-
             }
 
         })
@@ -94,7 +93,7 @@ class CartActivity : AppCompatActivity() {
             if (cartModel != null) {
                 listCart.add(cartModel)
                 listLapOrder = cartModel.listLapOrder
-                adapterCart.setList(listLapOrder)
+                adapterCart.setListCart(listLapOrder)
             }
         }
     }

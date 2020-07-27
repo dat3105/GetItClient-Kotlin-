@@ -38,7 +38,6 @@ class AccountFragment : Fragment()  {
     lateinit var btnLogout : LinearLayout
     var dbReference = FirebaseDatabase.getInstance().getReference().child("user")
      var userID =""
-    var listUser = ArrayList<User>()
     val TAG = "DbError_Account"
 
     override fun onCreateView(
@@ -123,7 +122,7 @@ class AccountFragment : Fragment()  {
                    var user = snapshot.getValue(User::class.java)
                    if (user != null) {
                        try {
-                           if (user.avaUser == "no information") {
+                           if (user.avaUser == "") {
                                tvUserName.text = user.userName
                                tvEmail.text = user.email
                                tvphoneNum.text = user.phone

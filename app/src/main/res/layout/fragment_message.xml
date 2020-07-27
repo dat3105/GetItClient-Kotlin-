@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Screens.Message.MessageFragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/mybackground"
-    android:orientation="vertical">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar_messageFragment"
         android:background="@drawable/toolbar_shape"
-        app:title="TIN NHẮN"
+        app:title="DANH SÁCH TIN NHẮN"
         app:titleTextColor="@color/mainColor"
         />
-    <androidx.recyclerview.widget.RecyclerView
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rcView_messageScreen"
-        android:layout_marginTop="15dp"
-        />
-
+        app:tabIndicatorColor="#548AFF"
+        app:tabTextColor="#000000"
+        app:tabSelectedTextColor="#548AFF"
+        android:id="@+id/tablayout_messageFragment">
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager_messageFragment"/>
 </LinearLayout>
-</ScrollView>

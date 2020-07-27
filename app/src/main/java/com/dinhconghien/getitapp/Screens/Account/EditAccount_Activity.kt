@@ -44,8 +44,6 @@ class EditAccount_Activity : AppCompatActivity() {
     lateinit var email : String
     lateinit var role : String
      var wasOnline : Boolean = true
-    var wasFirstBuy= true
-    var addresses = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,11 +112,9 @@ class EditAccount_Activity : AppCompatActivity() {
             if (listUser[i].userID.equals(current_userID)) {
                 if (listUser[i].password.equals(oldPass)) {
                     noti = "Cập nhật thông tin thành công"
-                    email = listUser[i].email
+                    email = listUser[i].email!!
                     role = listUser[i].role
                     wasOnline = listUser[i].wasOnline
-                    wasFirstBuy = listUser[i].wasFirstBuy
-                    addresses = listUser[i].userAddress
                 }
             }
         }
@@ -136,7 +132,7 @@ class EditAccount_Activity : AppCompatActivity() {
 
             val dialogLoading = DialogLoading(this)
             dialogLoading.show()
-            delay(1000L)
+            delay(300L)
             withContext(Dispatchers.IO){
                 noti = async { checkInfo(userName,phone,oldPass,newPass,avaUser) }.await()
             }
@@ -151,7 +147,7 @@ class EditAccount_Activity : AppCompatActivity() {
                 store.putFile(uri).addOnCompleteListener{
                     store.downloadUrl.addOnSuccessListener {
                             uri -> avaUser = uri.toString()
-                            user = User(current_userID,email,userName,phone,newPass,role,wasOnline,wasFirstBuy,avaUser,addresses)
+                            user = User(current_userID,email,userName,phone,newPass,role,wasOnline,avaUser)
                         dbReference.child(current_userID).setValue(user)
                         CustomToast.makeText(this, noti, Toast.LENGTH_LONG, 1)!!.show()
                         dialogLoading.dismiss()
