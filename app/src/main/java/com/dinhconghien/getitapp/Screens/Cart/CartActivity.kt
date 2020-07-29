@@ -4,8 +4,10 @@ package com.dinhconghien.getitapp.Screens.Cart
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dinhconghien.getitapp.Adapter.Cart_Adapter
@@ -13,6 +15,7 @@ import com.dinhconghien.getitapp.Models.BrandLapName
 import com.dinhconghien.getitapp.Models.Cart
 import com.dinhconghien.getitapp.Models.ListLaptop
 import com.dinhconghien.getitapp.R
+import com.dinhconghien.getitapp.UI.CustomToast
 import com.dinhconghien.getitapp.UI.DialogLoading
 import com.dinhconghien.getitapp.Utils.SharePreference_Utils
 import com.google.firebase.database.DataSnapshot
@@ -29,7 +32,6 @@ class CartActivity : AppCompatActivity() {
     var listCart = ArrayList<Cart>()
     var listLapOrder = ArrayList<ListLaptop>()
     private lateinit var adapterCart: Cart_Adapter
-    private val TAG = "Check size of listCart"
     val DB_CART = FirebaseDatabase.getInstance().getReference("cart")
     var idUser = ""
     val TAG_GETCART = "DbErrorGetCart_CartScreen"
@@ -45,6 +47,19 @@ class CartActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.Main) {   updateUI() }
 
         btn_confirm_cartScreen.setOnClickListener {
+            var address = et_address_cartScreen.text.toString()
+            if (TextUtils.isEmpty(address)){
+                CustomToast.makeText(this,"Vui lòng điền 'Địa chỉ nhận hàng'",Toast.LENGTH_LONG,2)
+                    ?.show()
+                return@setOnClickListener
+            }
+            else if (address.startsWith(" ") || address.endsWith(" ")){
+                CustomToast.makeText(this,"Vui lòng không để trống đầu và cuối ở 'Địa chỉ nhận hàng'",Toast.LENGTH_LONG,2)
+                    ?.show()
+                return@setOnClickListener
+            }
+            DB_CART.child(idUser).child("listLapOrder").setValue(listLapOrder)
+            DB_CART.child(idUser).child("addressOrder").setValue(address)
             val intent = Intent(this,PaymentActivity::class.java)
             startActivity(intent)
         }
@@ -103,11 +118,25 @@ class CartActivity : AppCompatActivity() {
         rcView_listCart_cartScreen.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         rcView_listCart_cartScreen.setHasFixedSize(true)
         rcView_listCart_cartScreen.adapter = adapterCart
-    }
+        adapterCart.setOnItemClickedListener(object : Cart_Adapter.OnItemClickedListener{
+            override fun onClicked(position: Int) {
+                listLapOrder.removeAt(position)
+                DB_CART.child(idUser).child("listLapOrder").setValue(listLapOrder)
+                adapterCart.setListCart(listLapOrder)
+                if (listLapOrder.size == 0){
+                    DB_CART.child(idUser).removeValue()
+                    reLayout_noneProduct_cartScreen.visibility = View.VISIBLE
+                    linearCart_hasCartScreen_cartScreen.visibility = View.GONE
+                }
+            }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG,"onStart ${listCart.size}")
+            override fun onCount(position: Int, count: Int) {
+               listLapOrder[position].amountInCart = count
+//                DB_CART.child(idUser).child("listLapOrder").setValue(listLapOrder)
+//                adapterCart.setListCart(listLapOrder)
+            }
+
+        })
     }
 
 }

@@ -1,273 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/swipeRL_billWatingScreen"
+    android:background="@drawable/mybackground"
     tools:context=".Screens.Invoice.InvoiceWatingDetail_Activity">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:id="@+id/toolbar_invoiceWatingDetail"
-            android:background="@drawable/toolbar_shape"
-            app:navigationIcon="@drawable/icon_back"
-            app:title="Đơn hàng chi tiết"
-            app:titleTextColor="@color/mainColor"
-            />
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp"
-            >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:id="@+id/toolbar_invoiceWatingDetail"
+                android:background="@drawable/toolbar_shape"
+                app:navigationIcon="@drawable/icon_back"
+                app:title="Đơn hàng chi tiết"
+                app:titleTextColor="@color/mainColor"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mã hóa đơn :"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/robotoblack"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_idInvoiceWatingDetail"
+                    android:text="Mã hóa đơn :"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/robotoregular"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="15dp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"
+                android:layout_marginHorizontal="15dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mã hóa đơn :"
+                android:text="Thông tin sản phẩm"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/robotoblack"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_idInvoiceWatingDetail"
-                android:text="Mã hóa đơn :"
-                android:textSize="20sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/robotoregular"
-                android:textColor="@color/black"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:background="@color/blurblack"
-            android:layout_marginHorizontal="15dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rcView_listLapWating"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="15dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thông tin khách hàng"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_margin="15dp"
-            android:fontFamily="@font/robotoblack"
-            android:textColor="@color/red"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="15dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Họ và tên :"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/robotoblack"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_userName_itemInvoiceWating"
-                android:text="Đinh Công Hiến"
-                android:textSize="20sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/robotoregular"
-                android:textColor="@color/black"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Địa chỉ :"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/robotoblack"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_address_invoiceWatingDetail"
-                android:text="Đinh Công Hiến"
-                android:textSize="20sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/robotoregular"
-                android:textColor="@color/black"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="15dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Số điện thoại :"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/robotoblack"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_phoneNumber_invoiceWatingDetail"
-                android:text="Đinh Công Hiến"
-                android:textSize="20sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/robotoregular"
-                android:textColor="@color/black"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:background="@color/blurblack"
-            android:layout_margin="15dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Trạng thái và thời gian đặt hàng"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="15dp"
-            android:fontFamily="@font/robotoblack"
-            android:textColor="@color/red"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="15dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Trạng thái thanh toán :"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/robotoblack"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_status_invoiceWatingDetail"
-                android:text="Đinh Công Hiến"
-                android:textSize="20sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/robotoregular"
-                android:textColor="@color/mainColor"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="15dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thời gian đặt hàng :"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/robotoblack"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_timeOrder_invoiceWatingDetail"
-                android:text="Đinh Công Hiến"
-                android:textSize="20sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/robotoregular"
-                android:textColor="@color/mainColor"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:background="@color/blurblack"
-            android:layout_margin="15dp"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tổng thanh toán : "
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
                 android:fontFamily="@font/robotoblack"
                 android:textColor="@color/red"
                 />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rcView_listLapWating"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_sumPrice_invoiceWatingDetail"
-                android:text="Tổng thanh toán : "
+                android:text="Thông tin của bạn"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:layout_margin="15dp"
                 android:fontFamily="@font/robotoblack"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/black"
+                android:textColor="@color/red"
                 />
-        </RelativeLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:id="@+id/btn_cancel_invoiceWatingDetail"
-            android:layout_margin="15dp"
-            android:background="@drawable/button_cancel_shape"
-            android:text="đăng nhập"
-            android:textSize="20sp"
-            android:textColor="#ffffff"/>
-    </LinearLayout>
-</ScrollView>
+            <!--   info user     -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/button_menu_shape"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imv_avaUser_billWatingDetail"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/ic_person"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="0.5dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/robotoblack"
+                            android:text="Tên: "
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/tv_userName_billWatingDetai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/robotoregular"
+                            android:text="a"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/robotoblack"
+                            android:textColor="@color/black"
+                            android:text="Số diện thoại: "
+                            android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/tv_phoneNumber_billWatingDetai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/robotoregular"
+                            android:textColor="@color/black"
+                            android:text="a"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Địa chỉ: "
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/robotoblack"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/tv_address_billWatingDetai"
+                            android:layout_width="wrap_content"
+                            android:text="a"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/robotoregular"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"
+                android:layout_margin="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái và thời gian đặt hàng"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/robotoblack"
+                android:textColor="@color/red"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái thanh toán :"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/robotoblack"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_status_invoiceWatingDetail"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/robotoregular"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="15dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thời gian đặt hàng :"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/robotoblack"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_timeOrder_invoiceWatingDetail"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/robotoregular"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="15dp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"
+                android:layout_margin="15dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng thanh toán : "
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/robotoblack"
+                    android:textColor="@color/red"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_sumPrice_invoiceWatingDetail"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/robotoblack"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/black"
+                    />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:id="@+id/btn_cancel_invoiceWatingDetail"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_cancel_shape"
+                android:text="hủy đơn hàng"
+                android:textSize="20sp"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

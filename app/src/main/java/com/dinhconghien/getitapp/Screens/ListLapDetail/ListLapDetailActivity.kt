@@ -40,6 +40,7 @@ class ListLapDetailActivity : AppCompatActivity() {
     var idBrandLap = ""
     var priceLap = ""
     var amountRating = 0
+    var quantity = 0
     val DB_LAPDETAIL = FirebaseDatabase.getInstance().getReference("laptopDetail")
     val DB_BRANDLAP = FirebaseDatabase.getInstance().getReference("brandLap")
     val DB_LAPTOP = FirebaseDatabase.getInstance().getReference("laptop")
@@ -194,19 +195,23 @@ class ListLapDetailActivity : AppCompatActivity() {
                     for (param in snapshot.children) {
                         val lapModel = param.getValue(ListLaptop::class.java)!!
                         priceLap = lapModel.priceLap.toString()
+                        quantity = lapModel.quantity
                         if (priceLap.length == 7) {
                             val firstChar = priceLap.substring(0, 1)
                             val middleChar = priceLap.substring(1, 4)
-                            val lastChar = priceLap.substring(3, 6)
+                            val lastChar = priceLap.substring(4, 7)
                             priceLap = "$firstChar.$middleChar.$lastChar"
                         } else if (priceLap.length == 8) {
                             val firstChar = priceLap.substring(0, 2)
                             val middleChar = priceLap.substring(2, 5)
-                            val lastChar = priceLap.substring(4, 7)
+                            val lastChar = priceLap.substring(5, 8)
                             priceLap = "$firstChar.$middleChar.$lastChar"
                         }
                         tv_nameLaptop_listLapDetailScreen.text = lapModel.nameLap
                         tv_priceLaptop_listLapDetailScreen.text = "$priceLap VNĐ"
+                        if (quantity == 0){
+                            tv_amountLaptop_listLapDetailScreen.text = "Tạm hết hàng"
+                        }
                         tv_amountLaptop_listLapDetailScreen.text = "Số lượng : ${lapModel.quantity}"
                         tv_amountSellLaptop_listLapDetailScreen.text =
                             "Đã bán : ${lapModel.amountSell}"
@@ -302,7 +307,12 @@ class ListLapDetailActivity : AppCompatActivity() {
         if (noti == "Sản phẩm đã có trong giỏ hàng"){
             CustomToast.makeText(this,noti,Toast.LENGTH_LONG,3)?.show()
             dialogLoading.dismiss()
-        }else{
+        }
+        else if (noti == "Sản phẩm đang tạm thời hết hàng.Vui lòng chọn sản phẩm khác"){
+            CustomToast.makeText(this,noti,Toast.LENGTH_LONG,3)?.show()
+            dialogLoading.dismiss()
+        }
+        else{
             listLapCheckCart.addAll(listLapCart)
             val cartModel = Cart(userID,"",listLapCheckCart)
             DB_CART.child(userID).setValue(cartModel)
@@ -316,6 +326,9 @@ class ListLapDetailActivity : AppCompatActivity() {
         for (i in 0 until listLapCheckCart.size){
             if(listLapCheckCart[i].idLap.equals(idLap)){
                 noti = "Sản phẩm đã có trong giỏ hàng"
+            }
+            else if (listLapCheckCart[i].quantity == 0){
+                noti = "Sản phẩm đang tạm thời hết hàng.Vui lòng chọn sản phẩm khác"
             }
         }
         return noti

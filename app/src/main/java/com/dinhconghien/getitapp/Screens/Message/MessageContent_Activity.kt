@@ -116,6 +116,7 @@ class MessageContent_Activity : AppCompatActivity() {
             val adminName = roomModel.adminName
             val wasSeenAdmin = roomModel.wasSeenAdmin
             val countUnreadAdmin = roomModel.countUnreadMesAdmin
+            adapterMesChat.setAvaAdminNew(avaAdmin)
             if (wasSeenAdmin == true) {
                 setUpMes(0, messageUser, true, avaAdmin, adminName, true)
             } else {
@@ -171,7 +172,7 @@ class MessageContent_Activity : AppCompatActivity() {
                 if (avaAdmin != "") {
                     Glide.with(this@MessageContent_Activity).load(avaAdmin).fitCenter()
                         .into(imv_avaUser_mesContent)
-                    adapterMesChat.setAvaAdminNew(avaAdmin)
+//                    adapterMesChat.setAvaAdminNew(avaAdmin)
                 }
             }
         }

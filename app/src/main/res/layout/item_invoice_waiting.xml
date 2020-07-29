@@ -5,18 +5,21 @@
     app:cardCornerRadius="7dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
-    android:layout_height="wrap_content">
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_height="wrap_content"
+    android:focusable="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingBottom="15dp"
-        android:background="@drawable/button_image_shape">
+      >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:orientation="horizontal"
-            android:background="@drawable/button_shape">
+            android:background="@drawable/btnblue_default">
             <ImageView
                 android:layout_width="30dp"
                 android:id="@+id/imv_bill_inVoiceWating"
@@ -59,7 +62,7 @@
                         android:layout_height="wrap_content"
                         android:text="Thời gian đặt hàng : "
                         android:textColor="@color/black"
-                        android:textSize="15dp"
+                        android:textSize="12sp"
                         android:fontFamily="@font/robotoregular"/>
                     <TextView
                         android:id="@+id/tv_timeOrder_itemInvoiceWating"
@@ -67,7 +70,7 @@
                         android:layout_height="wrap_content"
                         android:text="17/06/2020  09:30"
                         android:textColor="@color/black"
-                        android:textSize="15dp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/robotoregular"/>
                 </LinearLayout>
@@ -83,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:text="Tổng thanh toán : "
                         android:textColor="@color/black"
-                        android:textSize="15dp"
+                        android:textSize="12sp"
                         android:fontFamily="@font/robotoregular"/>
                     <TextView
                         android:id="@+id/tv_sumPrice_itemInvoiceWating"
@@ -91,8 +94,8 @@
                         android:layout_height="wrap_content"
                         android:text="12000000 VNĐ"
                         android:textColor="@color/red"
-                        android:layout_marginLeft="17dp"
-                        android:textSize="15dp"
+                        android:layout_marginLeft="13dp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/robotoregular"/>
                 </LinearLayout>
@@ -108,7 +111,7 @@
                         android:layout_height="wrap_content"
                         android:text="Trạng thái : "
                         android:textColor="@color/black"
-                        android:textSize="15dp"
+                        android:textSize="12sp"
                         android:fontFamily="@font/robotoregular"/>
                     <TextView
                         android:id="@+id/tv_status_itemInvoiceWating"
@@ -116,9 +119,9 @@
                         android:layout_height="wrap_content"
                         android:text="Đang chờ xác nhận"
                         android:textColor="@color/green"
-                        android:textSize="15dp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginLeft="47dp"
                         android:fontFamily="@font/robotoregular"/>
                 </LinearLayout>
 

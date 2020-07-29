@@ -8,10 +8,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.ListLapPayment
+import com.dinhconghien.getitapp.Models.ListLaptop
 import com.dinhconghien.getitapp.R
 
-class ListLapPayment_Adapter(val listLapPayment: ArrayList<ListLapPayment>) :
+class ListLapPayment_Adapter(var listLapPayment: ArrayList<ListLaptop>) :
     RecyclerView.Adapter<ListLapPayment_Adapter.ViewHolder>() {
+
+    fun setListLapPaymentNew(listLapPayment: ArrayList<ListLaptop>){
+        this.listLapPayment = listLapPayment
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -29,9 +35,21 @@ class ListLapPayment_Adapter(val listLapPayment: ArrayList<ListLapPayment>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val lapPayment = listLapPayment.get(position)
         holder.tv_nameLap.text = lapPayment.nameLap
-        holder.tv_brandLap.text = lapPayment.brandName
-        holder.tv_priceLap.text = "${lapPayment.price} VNĐ"
-        holder.tv_amountLap.text = "x ${lapPayment.amount}"
+        holder.tv_brandLap.text = lapPayment.nameBrand
+        var price = lapPayment.priceLap.toString()
+        if (price.length == 7) {
+            val firstChar = price.substring(0, 1)
+            val middleChar = price.substring(1, 4)
+            val lastChar = price.substring(4, 7)
+            price = "$firstChar.$middleChar.$lastChar"
+        } else if (price.length == 8) {
+            val firstChar = price.substring(0, 2)
+            val middleChar = price.substring(2, 5)
+            val lastChar = price.substring(5, 8)
+            price = "$firstChar.$middleChar.$lastChar"
+        }
+        holder.tv_priceLap.text = "$price VNĐ"
+        holder.tv_amountLap.text = "x ${lapPayment.amountInCart}"
         Glide.with(holder.itemView)
             .load(lapPayment.avaLap)
             .fitCenter()

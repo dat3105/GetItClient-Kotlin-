@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/swipeRL_paymentScreen"
+    android:background="@drawable/mybackground"
     tools:context=".Screens.Cart.PaymentActivity">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/mybackground"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
@@ -42,7 +45,9 @@
                 android:id="@+id/imv_avaUser_paymentScreen"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:src="@drawable/tran" />
+                app:civ_border_color="@color/black"
+                app:civ_border_width="0.5dp"
+                android:src="@drawable/ic_person" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -77,7 +82,7 @@
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
-<!--   info user     -->
+        <!--   info user     -->
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,10 +122,11 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
                 <TextView
+                    android:id="@+id/tv_sumPrice_paymentScreen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/robotoregular"
-                    android:text="20.000.000 VNĐ"
+                    android:text="0 VNĐ"
                     android:layout_alignParentRight="true"
                     android:textColor="@color/redPorto"
                     android:textSize="18sp" />
@@ -130,7 +136,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:id="@+id/btn_cancel_invoiceWatingDetail"
+            android:id="@+id/btn_confirm_paymentScreen"
             android:layout_margin="15dp"
             android:background="@drawable/button_shape"
             android:text="thanh toán"
@@ -139,3 +145,5 @@
 
     </LinearLayout>
 </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

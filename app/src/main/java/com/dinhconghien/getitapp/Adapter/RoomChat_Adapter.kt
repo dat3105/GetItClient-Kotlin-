@@ -22,7 +22,7 @@ class RoomChat_Adapter(
     var listRoomChat: ArrayList<RoomChat>,
     var idUser: String
 ) : RecyclerView.Adapter<RoomChat_Adapter.ViewHolder>() {
-    var listener : RoomChat_Adapter.OnItemClickedListener? = null
+    var listener : OnItemClickedListener? = null
 
     fun setListRoomChatNew(listUser: ArrayList<RoomChat>) {
         this.listRoomChat = listUser

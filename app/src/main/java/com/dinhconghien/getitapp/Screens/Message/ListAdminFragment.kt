@@ -156,10 +156,7 @@ class ListAdminFragment : Fragment() {
         adapterListAdmin.setOnItemClickedListener(object : ListAdmin_Adapter.OnItemClickedListener {
             @SuppressLint("LongLogTag")
             override fun onClicked(position: Int) {
-//                val dialogLoading = DialogLoading(view.context)
-//                dialogLoading.show()
                 try {
-
                     var idAdmin = listAdmin[position].userID
                     val idRoomChat = "$idAdmin$idUser"
                     val avaAdmin = listAdmin[position].avaUser
@@ -174,10 +171,8 @@ class ListAdminFragment : Fragment() {
                         wasOnlineAdmin,
                         adminName!!
                     )
-//                    dialogLoading.dismiss()
                 } catch (e: Exception) {
                     Log.d(TAG_ADDROOMCHAT, e.toString())
-//                    dialogLoading.dismiss()
                 }
             }
         })

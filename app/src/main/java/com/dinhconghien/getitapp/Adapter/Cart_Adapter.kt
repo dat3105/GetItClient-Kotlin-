@@ -11,12 +11,23 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.dinhconghien.getitapp.Models.Cart
 import com.dinhconghien.getitapp.Models.ListLaptop
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.UI.CustomToast
 
 class Cart_Adapter(var context: Context, var lisCart: ArrayList<ListLaptop>) :
     RecyclerView.Adapter<Cart_Adapter.ViewHolder>() {
+    var listener : OnItemClickedListener? = null
+
+    fun setOnItemClickedListener(listener: Cart_Adapter.OnItemClickedListener) {
+        this.listener = listener
+    }
+
+    interface OnItemClickedListener {
+        fun onClicked(position: Int)
+        fun onCount(position: Int,count : Int)
+    }
 
     fun setListCart(lisCart: ArrayList<ListLaptop>) {
         this.lisCart = lisCart
@@ -36,20 +47,20 @@ class Cart_Adapter(var context: Context, var lisCart: ArrayList<ListLaptop>) :
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val lapOrder = lisCart.get(position)
-        var count = 1
-
+        var count = lapOrder.amountInCart
+        holder.tv_mountSell.text = count.toString()
         holder.tv_nameLap.text = lapOrder.nameLap
         holder.tv_brandLap.text = lapOrder.nameBrand
         var price = lapOrder.priceLap.toString()
         if (price.length == 7) {
             val firstChar = price.substring(0, 1)
             val middleChar = price.substring(1, 4)
-            val lastChar = price.substring(3, 6)
+            val lastChar = price.substring(4, 7)
             price = "$firstChar.$middleChar.$lastChar"
         } else if (price.length == 8) {
             val firstChar = price.substring(0, 2)
             val middleChar = price.substring(2, 5)
-            val lastChar = price.substring(4, 7)
+            val lastChar = price.substring(5, 8)
             price = "$firstChar.$middleChar.$lastChar"
         }
         holder.tv_priceLap.text = "${price} VND"
@@ -73,6 +84,7 @@ class Cart_Adapter(var context: Context, var lisCart: ArrayList<ListLaptop>) :
             } else {
                 count++
                 holder.tv_mountSell.text = count.toString()
+                listener?.onCount(position,count)
             }
         }
 
@@ -88,6 +100,7 @@ class Cart_Adapter(var context: Context, var lisCart: ArrayList<ListLaptop>) :
             } else {
                 count--
                 holder.tv_mountSell.text = count.toString()
+                listener?.onCount(position,count)
             }
         }
 
@@ -96,7 +109,10 @@ class Cart_Adapter(var context: Context, var lisCart: ArrayList<ListLaptop>) :
                 removeAt(position)
             }
             setListCart(listAfterDelete as ArrayList<ListLaptop>)
-            notifyDataSetChanged()
+            listener?.onClicked(position)
+            CustomToast.makeText(context,"Sản phẩm ${lapOrder.nameLap} đã được xóa khỏi giỏ hàng"
+                ,Toast.LENGTH_LONG,1)
+                ?.show()
             notifyItemRangeChanged(position, lisCart.size)
         }
     }

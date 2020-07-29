@@ -34,7 +34,6 @@
             android:configChanges="keyboardHidden"/>
         <activity
             android:name=".Screens.Invoice.InvoiceWatingDetail_Activity"
-            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".Screens.ListLapDetail.ListLapDetailActivity"

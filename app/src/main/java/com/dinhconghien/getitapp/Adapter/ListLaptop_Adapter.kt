@@ -52,15 +52,15 @@ class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLapt
         val listLapItem = listLapFilter.get(position)
         holder.tv_nameLap.text = listLapItem.nameLap
         var priceLap = listLapItem.priceLap.toString()
-        if (priceLap.length == 7){
-            val firstChar = priceLap.substring(0,1)
-            val middleChar = priceLap.substring(1,4)
-            val lastChar = priceLap.substring(3,6)
+        if (priceLap.length == 7) {
+            val firstChar = priceLap.substring(0, 1)
+            val middleChar = priceLap.substring(1, 4)
+            val lastChar = priceLap.substring(4, 7)
             priceLap = "$firstChar.$middleChar.$lastChar"
-        }else if (priceLap.length == 8){
-            val firstChar = priceLap.substring(0,2)
-            val middleChar = priceLap.substring(2,5)
-            val lastChar = priceLap.substring(4,7)
+        } else if (priceLap.length == 8) {
+            val firstChar = priceLap.substring(0, 2)
+            val middleChar = priceLap.substring(2, 5)
+            val lastChar = priceLap.substring(5, 8)
             priceLap = "$firstChar.$middleChar.$lastChar"
         }
         holder.tv_priceLap.text = "$priceLap VNĐ"
