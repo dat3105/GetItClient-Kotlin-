@@ -137,7 +137,7 @@ class InvoiceWatingDetail_Activity : AppCompatActivity() {
     }
 
     private fun setListLapOrder(){
-        DB_BILL.orderByChild("idUser").equalTo(idUser).addListenerForSingleValueEvent(object : ValueEventListener{
+        DB_BILL.orderByChild("idBill").equalTo(idBill).addListenerForSingleValueEvent(object : ValueEventListener{
             @SuppressLint("LongLogTag")
             override fun onCancelled(error: DatabaseError) {
                 Log.d(TAG_GETLAPPAYMENT,error.toString())
