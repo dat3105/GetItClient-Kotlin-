@@ -98,13 +98,14 @@ class PaymentActivity : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getListLapModel(snapshot: DataSnapshot){
         for (param in snapshot.children){
             val cartModel = param.getValue(Cart::class.java)
             if (cartModel != null){
                 listLapPayment = cartModel.listLapOrder
                 adapterLapPayment.setListLapPaymentNew(listLapPayment)
-                var sumPrice = 0
+                var sumPrice = 0L
 
                 for (i in 0 until listLapPayment.size){
                     sumPrice += listLapPayment[i].priceLap * listLapPayment[i].amountInCart
@@ -140,6 +141,30 @@ class PaymentActivity : AppCompatActivity() {
                     val preLastChar = price.substring(5, 8)
                     val lastChar = price.substring(8, 11)
                     price = "$firstChar.$middleChar.$preLastChar.$lastChar"
+                }
+                else if (price.length == 12){
+                    val firstChar = price.substring(0, 3)
+                    val middleChar = price.substring(3, 6)
+                    val preLastChar = price.substring(6, 9)
+                    val lastChar = price.substring(9, 12)
+                }
+                else if (price.length == 13){
+                    val firstChar = price.substring(0, 4)
+                    val middleChar = price.substring(4, 7)
+                    val preLastChar = price.substring(7, 10)
+                    val lastChar = price.substring(10, 13)
+                }
+                else if (price.length == 14){
+                    val firstChar = price.substring(0, 5)
+                    val middleChar = price.substring(4, 7)
+                    val preLastChar = price.substring(7, 10)
+                    val lastChar = price.substring(10, 13)
+                }
+                else if (price.length == 15){
+                    val firstChar = price.substring(0, 6)
+                    val middleChar = price.substring(4, 7)
+                    val preLastChar = price.substring(7, 10)
+                    val lastChar = price.substring(10, 13)
                 }
                 tv_sumPrice_paymentScreen.text = "$price VNĐ"
             }

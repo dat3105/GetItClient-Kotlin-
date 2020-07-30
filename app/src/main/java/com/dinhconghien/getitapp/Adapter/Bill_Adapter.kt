@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.Bill
-import com.dinhconghien.getitapp.Models.Invoice
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Invoice.InvoiceAcceptedDetail_Activity
 import com.dinhconghien.getitapp.Screens.Invoice.InvoiceWatingDetail_Activity
@@ -71,12 +70,12 @@ class Bill_Adapter(var context: Context, var listInvoice : ArrayList<Bill>) :Rec
             val lastChar = price.substring(8, 11)
             price = "$firstChar.$middleChar.$preLastChar.$lastChar"
         }
-        holder.tv_sumPrice.text  = "$price VNĐ"
+        holder.tv_sumPrice.text  = "$price"
         holder.tv_status.text    = invoiceWating.status
         if (invoiceWating.status.contains("Đang chờ xác nhận",true)){
             holder.tv_status.setTextColor(Color.parseColor("#00A65C"))
         }
-        if (invoiceWating.status.contains("Đã giao",true)){
+        if (invoiceWating.status.contains("Đã xác nhận",true)){
             holder.tv_status.setTextColor(Color.parseColor("#2F85FF"))
         }
 
@@ -95,7 +94,7 @@ class Bill_Adapter(var context: Context, var listInvoice : ArrayList<Bill>) :Rec
                 intent.putExtra("addressOrder",invoiceWating.addressOrder)
                 context.startActivity(intent)
             }
-            if (status.contains("Đã giao",true)){
+            if (status.contains("Đã xác nhận",true)){
                 val intent = Intent(context,InvoiceAcceptedDetail_Activity::class.java)
                 intent.putExtra("idBill",invoiceWating.idBill)
                 context.startActivity(intent)

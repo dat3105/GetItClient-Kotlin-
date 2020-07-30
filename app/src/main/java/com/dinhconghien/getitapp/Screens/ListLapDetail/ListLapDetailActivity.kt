@@ -212,7 +212,9 @@ class ListLapDetailActivity : AppCompatActivity() {
                         if (quantity == 0){
                             tv_amountLaptop_listLapDetailScreen.text = "Tạm hết hàng"
                         }
-                        tv_amountLaptop_listLapDetailScreen.text = "Số lượng : ${lapModel.quantity}"
+                        else{
+                            tv_amountLaptop_listLapDetailScreen.text = "Số lượng : ${lapModel.quantity}"
+                        }
                         tv_amountSellLaptop_listLapDetailScreen.text =
                             "Đã bán : ${lapModel.amountSell}"
                         ratingBar_listLapDetail.rating = lapModel.rating.toFloat()
@@ -302,23 +304,27 @@ class ListLapDetailActivity : AppCompatActivity() {
     private fun addToCart(){
         val dialogLoading = DialogLoading(this)
         dialogLoading.show()
-        getListLapForCheck()
-        val noti = checkIDLapForCart()
-        if (noti == "Sản phẩm đã có trong giỏ hàng"){
-            CustomToast.makeText(this,noti,Toast.LENGTH_LONG,3)?.show()
-            dialogLoading.dismiss()
-        }
-        else if (noti == "Sản phẩm đang tạm thời hết hàng.Vui lòng chọn sản phẩm khác"){
-            CustomToast.makeText(this,noti,Toast.LENGTH_LONG,3)?.show()
+        if (quantity == 0){
+            CustomToast.makeText(this,"Sản phẩm đang tạm thời hết hàng.Vui lòng chọn sản phẩm khác"
+                ,Toast.LENGTH_LONG,3)?.show()
             dialogLoading.dismiss()
         }
         else{
-            listLapCheckCart.addAll(listLapCart)
-            val cartModel = Cart(userID,"",listLapCheckCart)
-            DB_CART.child(userID).setValue(cartModel)
-            CustomToast.makeText(this,noti,Toast.LENGTH_LONG,1)?.show()
-            dialogLoading.dismiss()
+            getListLapForCheck()
+            val noti = checkIDLapForCart()
+            if (noti == "Sản phẩm đã có trong giỏ hàng"){
+                CustomToast.makeText(this,noti,Toast.LENGTH_LONG,3)?.show()
+                dialogLoading.dismiss()
+            }
+            else{
+                listLapCheckCart.addAll(listLapCart)
+                val cartModel = Cart(userID,"",listLapCheckCart)
+                DB_CART.child(userID).setValue(cartModel)
+                CustomToast.makeText(this,noti,Toast.LENGTH_LONG,1)?.show()
+                dialogLoading.dismiss()
+            }
         }
+
     }
 
     private fun checkIDLapForCart() : String{
@@ -326,9 +332,6 @@ class ListLapDetailActivity : AppCompatActivity() {
         for (i in 0 until listLapCheckCart.size){
             if(listLapCheckCart[i].idLap.equals(idLap)){
                 noti = "Sản phẩm đã có trong giỏ hàng"
-            }
-            else if (listLapCheckCart[i].quantity == 0){
-                noti = "Sản phẩm đang tạm thời hết hàng.Vui lòng chọn sản phẩm khác"
             }
         }
         return noti

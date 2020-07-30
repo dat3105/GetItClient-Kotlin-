@@ -23,7 +23,6 @@ class InvoiceWaitingFragment : Fragment() {
     lateinit var adapterBill : Bill_Adapter
     lateinit var rcView_invoiceWating : RecyclerView
     lateinit var swipeRL_bill : SwipeRefreshLayout
-    var listInvoiceWating = ArrayList<Bill>()
     var listInvoice = ArrayList<Bill>()
         lateinit var idUser : String
     val DB_BILL = FirebaseDatabase.getInstance().getReference("bill")
@@ -51,7 +50,7 @@ class InvoiceWaitingFragment : Fragment() {
     }
 
     private fun getInvoiceItem(view: View){
-        adapterBill = Bill_Adapter(view.context,listInvoiceWating)
+        adapterBill = Bill_Adapter(view.context,listInvoice)
         rcView_invoiceWating.layoutManager = LinearLayoutManager(view.context,LinearLayoutManager.VERTICAL,false)
         rcView_invoiceWating.setHasFixedSize(true)
         rcView_invoiceWating.adapter = adapterBill

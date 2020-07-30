@@ -203,8 +203,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Trạng thái thanh toán :"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:padding="0dp"
                     android:fontFamily="@font/robotoblack"
                     android:textColor="@color/black"
                     />
@@ -212,11 +214,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_status_invoiceWatingDetail"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
+                    android:text="a"
+                    android:layout_weight="1"
                     android:textStyle="normal"
+                    android:gravity="right"
                     android:fontFamily="@font/robotoregular"
                     android:textColor="@color/black"
-                    android:layout_marginLeft="15dp"
+                    android:padding="0dp"
                     />
             </LinearLayout>
 
@@ -230,8 +235,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thời gian đặt hàng :"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:padding="0dp"
                     android:fontFamily="@font/robotoblack"
                     android:textColor="@color/black"
                     />
@@ -239,11 +246,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_timeOrder_invoiceWatingDetail"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
                     android:textStyle="normal"
+                    android:layout_weight="1"
+                    android:padding="0dp"
+                    android:text="a"
+                    android:gravity="right"
                     android:fontFamily="@font/robotoregular"
                     android:textColor="@color/black"
-                    android:layout_marginLeft="15dp"
                     />
             </LinearLayout>
 
@@ -253,9 +263,10 @@
                 android:background="@color/blurblack"
                 android:layout_margin="15dp"/>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginHorizontal="15dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -263,6 +274,8 @@
                     android:text="Tổng thanh toán : "
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:padding="0dp"
                     android:fontFamily="@font/robotoblack"
                     android:textColor="@color/red"
                     />
@@ -270,13 +283,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_sumPrice_invoiceWatingDetail"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:padding="0dp"
                     android:fontFamily="@font/robotoblack"
-                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:text="a"
                     android:textColor="@color/black"
                     />
-            </RelativeLayout>
+            </LinearLayout>
 
             <Button
                 android:layout_width="match_parent"

@@ -54,32 +54,72 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:orientation="vertical">
-                <TextView
-                    android:id="@+id/tv_userName_paymentScreen"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/robotoblack"
-                    android:text="Đinh Công Hiến"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-                <TextView
-                    android:id="@+id/tv_phoneNumber_paymentScreen"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/robotoblack"
+                        android:text="Tên: "
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/tv_userName_paymentScreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="Đinh Công Hiến"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="0933261041"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-                <TextView
-                    android:id="@+id/tv_address_paymentScreen"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/robotoblack"
+                        android:text="Số điện thoại: "
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/tv_phoneNumber_paymentScreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="0933261041"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="379/32 Thống Nhất, Gò Vấp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/robotoblack"
+                        android:text="Địa chỉ: "
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/tv_address_paymentScreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotoregular"
+                        android:text="379/32 Thống Nhất, Gò Vấp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
         <!--   info user     -->

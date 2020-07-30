@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/mybackground"
     android:id="@+id/swipeRL_billWatingScreen"
+    android:paddingBottom="40dp"
     tools:context=".Screens.Invoice.InvoiceWaitingFragment">
     <ScrollView
         android:layout_width="match_parent"

@@ -21,19 +21,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc1d520-5dbf-48ad-9467-1edb0e691389" name="Default Changelist" comment="+Tạo layout màn hình chào,login,quên mật khẩu,">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/iconstar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/CommentLap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceWatingDetail_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceWatingDetail_Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_account_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_account_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/Bill_Adapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/Bill_Adapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ItemInvoiceAccepted_Adapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ListLapPayment_Adapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ListLapPayment_Adapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/Invoice.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/ItemInvoiceAccepted.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/LastMessage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/ListLapPayment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/ListLaptop.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Models/ListLaptop.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Cart/PaymentActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Cart/PaymentActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceAcceptedDetail_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceAcceptedDetail_Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceAcceptedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceAcceptedFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceWaitingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceWaitingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLapDetail/ListLapDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLapDetail/ListLapDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_wating_detail_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_wating_detail_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_accepted.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_accepted.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_waiting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_invoice_waiting.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_26" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="2c821230" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -209,10 +235,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="248" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1596008214406" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595733300530">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596089821132">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595733300530" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596089821132" />
     <state x="448" y="14" width="472" height="699" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1592820425512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -225,14 +251,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="119" key="AndroidCreateResourceDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1592473724525" />
-    <state x="421" y="198" key="AndroidCreateResourceFileDialog" timestamp="1595744413504">
+    <state x="421" y="198" key="AndroidCreateResourceFileDialog" timestamp="1596089919945">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="421" y="198" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1595744413504" />
-    <state x="541" y="177" key="AndroidCreateXmlResourceDialog" timestamp="1595581256871">
+    <state x="421" y="198" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1596089919945" />
+    <state x="541" y="177" key="AndroidCreateXmlResourceDialog" timestamp="1596096147656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="541" y="177" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1595581256871" />
+    <state x="541" y="177" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1596096147656" />
     <state x="538" y="129" key="AndroidProcessChooserDialog" timestamp="1593534468717">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -301,10 +327,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.728@0.0.1366.728" timestamp="1595775508129" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1596037926448">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1596075012067">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596037926448" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1596075012067" />
     <state x="110" y="120" width="1146" height="488" key="dock-window-1" timestamp="1596016935019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -317,9 +343,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1596000397328" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596038953036">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596103419844">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1596038953036" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1596103419844" />
   </component>
 </project>
