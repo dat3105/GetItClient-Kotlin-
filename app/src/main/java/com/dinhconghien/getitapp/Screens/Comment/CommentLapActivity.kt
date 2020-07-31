@@ -270,7 +270,7 @@ class CommentLapActivity : AppCompatActivity() {
                 }
             }
             else if (check5Star == true){
-                if (listComment1Star.size == 0){
+                if (listComment5Star.size == 0){
                     linear_commentLap.visibility = View.VISIBLE
                 }else{
                     linear_commentLap.visibility = View.GONE
