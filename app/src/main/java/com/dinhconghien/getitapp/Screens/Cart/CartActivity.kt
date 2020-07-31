@@ -132,8 +132,6 @@ class CartActivity : AppCompatActivity() {
 
             override fun onCount(position: Int, count: Int) {
                listLapOrder[position].amountInCart = count
-//                DB_CART.child(idUser).child("listLapOrder").setValue(listLapOrder)
-//                adapterCart.setListCart(listLapOrder)
             }
 
         })

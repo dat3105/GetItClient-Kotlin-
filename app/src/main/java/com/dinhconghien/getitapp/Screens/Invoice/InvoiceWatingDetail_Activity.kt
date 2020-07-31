@@ -53,14 +53,14 @@ class InvoiceWatingDetail_Activity : AppCompatActivity() {
             swipeRL_billWatingScreen.isRefreshing = false
             GlobalScope.launch(Dispatchers.Main) { updateUI() }
         }
-        btn_cancel_invoiceWatingDetail.setOnClickListener {
-            DB_BILL.child(idBill).child("status").setValue("Đã hủy")
-            DB_BILL.child(idBill).child("idPersonCancel").setValue(idUser)
-            CustomToast.makeText(this,"Đơn hàng đã bị hủy",Toast.LENGTH_LONG,1)?.show()
-            val intet = Intent(this,MainActivity::class.java)
-            startActivity(intet)
-            finish()
-        }
+//        btn_cancel_invoiceWatingDetail.setOnClickListener {
+//            DB_BILL.child(idBill).child("status").setValue("Đã hủy")
+//            DB_BILL.child(idBill).child("idPersonCancel").setValue(idUser)
+//            CustomToast.makeText(this,"Đơn hàng đã bị hủy",Toast.LENGTH_LONG,1)?.show()
+//            val intet = Intent(this,MainActivity::class.java)
+//            startActivity(intet)
+//            finish()
+//        }
         toolbar_invoiceWatingDetail.setNavigationOnClickListener {
             val intet = Intent(this,MainActivity::class.java)
             startActivity(intet)

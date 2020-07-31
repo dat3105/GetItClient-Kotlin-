@@ -294,15 +294,15 @@
                     />
             </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:id="@+id/btn_cancel_invoiceWatingDetail"
-                android:layout_margin="15dp"
-                android:background="@drawable/button_cancel_shape"
-                android:text="hủy đơn hàng"
-                android:textSize="20sp"
-                android:textColor="#ffffff"/>
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:id="@+id/btn_cancel_invoiceWatingDetail"-->
+<!--                android:layout_margin="15dp"-->
+<!--                android:background="@drawable/button_cancel_shape"-->
+<!--                android:text="hủy đơn hàng"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textColor="#ffffff"/>-->
         </LinearLayout>
     </ScrollView>
 

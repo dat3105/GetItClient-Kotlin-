@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dinhconghien.getitapp"
-    >
+    package="com.dinhconghien.getitapp">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,53 +11,59 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Screens.Message.MessageContent_Activity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden">
-        </activity>
+        <activity android:name=".Screens.Comment.CommentLapActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Screens.Invoice.CommentActivity" />
+        <activity
+            android:name=".Screens.Message.MessageContent_Activity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screens.Account.AboutUs_Activity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Screens.Account.EditAccount_Activity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Screens.Account.EditAccount_Activity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screens.Invoice.InvoiceAcceptedDetail_Activity"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            />
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screens.Cart.PaymentActivity"
-            android:parentActivityName=".Screens.Cart.CartActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden"/>
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screens.Invoice.InvoiceWatingDetail_Activity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screens.ListLapDetail.ListLapDetailActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screens.ListLaptop.ListLaptopActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden"/>
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screens.Cart.CartActivity"
+            android:configChanges="keyboardHidden"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden"/>
-        <activity android:name=".Screens.GetBackPassword.GetBackPassActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden"/>
-        <activity android:name=".Screens.Register.RegisterActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden"/>
-        <activity android:name=".Screens.Login.LoginActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden"/>
-        <activity android:name=".Screens.Splash.SplashActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Screens.GetBackPassword.GetBackPassActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Screens.Register.RegisterActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Screens.Login.LoginActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Screens.Splash.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,8 +71,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

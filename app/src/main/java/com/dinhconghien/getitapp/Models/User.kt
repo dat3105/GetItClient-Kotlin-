@@ -10,7 +10,7 @@ class User() : Serializable{
     var password : String? =""
     var role : String = "Customer"
     var wasOnline : Boolean = false
-    var avaUser : String? =""
+    var avaUser : String =""
     constructor( userID : String,email : String ="",userName : String , phone : String
                  ,password : String,role : String,wasOnline : Boolean,avaUser : String) : this(){
         this.userID = userID

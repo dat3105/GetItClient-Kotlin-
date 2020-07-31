@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="7dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    android:background="@drawable/button_menu_shape"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            app:civ_border_width="0.1dp"
+            app:civ_border_color="@color/black"
+            android:id="@+id/imv_avaUser_itemCommentLap"
+            android:src="@drawable/ic_person"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/reLayout_itemBillAccepted"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/imv_avaUser_itemCommentLap"
+            >
+            <TextView
+                android:id="@+id/tv_userName_itemCommentLapt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/robotoblack"
+                android:text="Công Hiến"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar_itemCommentLap"
+                android:numStars="5"
+                android:isIndicator="true"
+                android:scaleX=".5"
+                android:scaleY=".5"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                android:layout_marginBottom="-26dp"
+                android:layout_marginRight="-100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/RatingBar"/>
+                <TextView
+                    android:id="@+id/tv_date_itemCommentLap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="31/07/2020 14:30"
+                    android:textColor="@color/blurblack"
+                    android:textSize="12sp" />
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="0.5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:id="@+id/view_itemBillAccepted"-->
+<!--                android:background="@color/blurblack"-->
+<!--                android:layout_below="@+id/reLayout_itemBillAccepted"/>-->
+            <TextView
+                android:id="@+id/tv_comment_itemCommentLap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:fontFamily="@font/robotolight"
+                android:background="@drawable/textview_commentlap_shape"
+                android:text="Vostro đĩ mẹ m"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

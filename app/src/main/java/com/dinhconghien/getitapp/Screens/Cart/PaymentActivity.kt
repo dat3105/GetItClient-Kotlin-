@@ -20,10 +20,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_payment.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -37,14 +34,19 @@ class PaymentActivity : AppCompatActivity() {
     val TAG_GETCART = "DbError_getCart_paymentScreen"
     val TAG_GETLAPPAYMENT = "DbError_getLapCart_paymentScreen"
     var idUser = ""
+    lateinit var job: Job
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
 
         setSupportActionBar(toolbar_paymentScreen)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        job = Job()
+       toolbar_paymentScreen.setNavigationOnClickListener {
+           val intent = Intent(this,MainActivity::class.java)
+           startActivity(intent)
+           finish()
+       }
 
         GlobalScope.launch(Dispatchers.Main) {
             updateUI()
@@ -72,6 +74,11 @@ class PaymentActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        job.cancel()
     }
 
     suspend fun updateUI(){
@@ -147,24 +154,28 @@ class PaymentActivity : AppCompatActivity() {
                     val middleChar = price.substring(3, 6)
                     val preLastChar = price.substring(6, 9)
                     val lastChar = price.substring(9, 12)
+                    price = "$firstChar.$middleChar.$preLastChar.$lastChar"
                 }
                 else if (price.length == 13){
                     val firstChar = price.substring(0, 4)
                     val middleChar = price.substring(4, 7)
                     val preLastChar = price.substring(7, 10)
                     val lastChar = price.substring(10, 13)
+                    price = "$firstChar.$middleChar.$preLastChar.$lastChar"
                 }
                 else if (price.length == 14){
                     val firstChar = price.substring(0, 5)
                     val middleChar = price.substring(4, 7)
                     val preLastChar = price.substring(7, 10)
                     val lastChar = price.substring(10, 13)
+                    price = "$firstChar.$middleChar.$preLastChar.$lastChar"
                 }
                 else if (price.length == 15){
                     val firstChar = price.substring(0, 6)
                     val middleChar = price.substring(4, 7)
                     val preLastChar = price.substring(7, 10)
                     val lastChar = price.substring(10, 13)
+                    price = "$firstChar.$middleChar.$preLastChar.$lastChar"
                 }
                 tv_sumPrice_paymentScreen.text = "$price VNĐ"
             }

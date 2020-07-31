@@ -23,6 +23,7 @@ import com.dinhconghien.getitapp.Models.Cart
 import com.dinhconghien.getitapp.Models.LaptopDetail
 import com.dinhconghien.getitapp.Models.ListLaptop
 import com.dinhconghien.getitapp.R
+import com.dinhconghien.getitapp.Screens.Comment.CommentLapActivity
 import com.dinhconghien.getitapp.Screens.ListLaptop.ListLaptopActivity
 import com.dinhconghien.getitapp.UI.CustomToast
 import com.dinhconghien.getitapp.UI.DialogLoading
@@ -107,6 +108,13 @@ class ListLapDetailActivity : AppCompatActivity() {
 
         imv_addToCart_listLapDetailScreen.setOnClickListener {
             addToCart()
+        }
+
+        tv_watchMoreComment_listLapDetailScreen.setOnClickListener {
+            val intent = Intent(this,CommentLapActivity::class.java)
+            intent.putExtra("idLap",idLap)
+            intent.putExtra("idBrandLap",idBrandLap)
+            startActivity(intent)
         }
 
     }

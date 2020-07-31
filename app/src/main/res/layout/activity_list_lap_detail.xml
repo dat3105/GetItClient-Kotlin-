@@ -175,7 +175,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:fontFamily="@font/robotoregular"
+                android:fontFamily="@font/robotomedium"
                 android:text="Chi tiết laptop"
                 android:textStyle="normal"
                 android:textColor="@color/black"
@@ -310,15 +310,56 @@
                 android:textSize="20sp"
                 android:textColor="#ffffff"
                 tools:ignore="OnClick" />
+            <View
+                android:layout_marginHorizontal="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/blurblack"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="Đánh giá sản phẩm"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:id="@+id/tv_watchMoreComment_listLapDetailScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotoregular"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="Xem thêm  "
+                    android:layout_alignParentRight="true"
+                    android:textStyle="normal"
+                    android:drawableRight="@drawable/icon_watchmore"
+                    android:textColor="@color/mainColor"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/rcView_listCommentLap_listLapDetail"
+               android:layout_marginBottom="15dp"
+               android:layout_marginHorizontal="15dp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_margin="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginBottom="15dp"
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotoregular"
+                    android:fontFamily="@font/robotomedium"
                     android:text="Sản phẩm cùng loại"
                     android:textStyle="normal"
                     android:textColor="@color/black"
@@ -335,7 +376,6 @@
                     android:drawableRight="@drawable/icon_watchmore"
                     android:textColor="@color/mainColor"
                     android:textSize="20sp"
-                    android:onClick="onClick"
                     />
             </RelativeLayout>
 

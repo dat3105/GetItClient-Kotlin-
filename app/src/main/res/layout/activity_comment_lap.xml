@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRL_commentLap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screens.Comment.CommentLapActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_commentLap_activity"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/toolbar_shape"
+                app:navigationIcon="@drawable/icon_back"
+                app:title="BÌNH LUẬN CHI TIẾT"
+                app:titleTextColor="@color/mainColor" />
+            <LinearLayout
+                android:id="@+id/layout_commentALLStar"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                android:background="@drawable/btn_comment_press"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotoblack"
+                    android:text="Tất cả"
+                    android:textColor="@color/mainColor"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_amountRatingAll_commentLap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotolight"
+                    android:text="(12)"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/layout_comment1Star"
+                    android:layout_width="75dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/btnaccount_default"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="9dp"
+                        android:src="@drawable/iconstar" />
+
+                    <TextView
+                        android:id="@+id/tv_1Star_commentLap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotolight"
+                        android:text="(12)"
+                        android:textColor="@color/blurblack"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!--      layout 1 star          -->
+
+                <LinearLayout
+                    android:id="@+id/layout_comment2Star"
+                    android:layout_width="75dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="@drawable/btnaccount_default"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_radioItem2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotolight"
+                        android:text="(12)"
+                        android:textColor="@color/blurblack"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!--      layout 2 star          -->
+
+                <LinearLayout
+                    android:id="@+id/layout_comment3star"
+                    android:layout_width="75dp"
+                    android:layout_height="45dp"
+                    android:layout_marginHorizontal="2dp"
+                    android:background="@drawable/btnaccount_default"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_radioItem3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotolight"
+                        android:text="(12)"
+                        android:textColor="@color/blurblack"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!--       layout 3 star         -->
+
+                <LinearLayout
+                    android:id="@+id/layout_comment4Star"
+                    android:layout_width="75dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/btnaccount_default"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_radioItem4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotolight"
+                        android:text="(12)"
+                        android:textColor="@color/blurblack"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!--       layout 4 star         -->
+
+                <LinearLayout
+                    android:id="@+id/layout_comment5Star"
+                    android:layout_width="75dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnaccount_default"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="9dp"
+                            android:src="@drawable/iconstar" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_radioItem5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotolight"
+                        android:text="(12)"
+                        android:textColor="@color/blurblack"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!--       layout 5 star         -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:id="@+id/linear_commentLap"
+                android:visibility="gone"
+                android:layout_marginVertical="20dp"
+                android:gravity="center">
+               <androidx.appcompat.widget.AppCompatImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/conmemay"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Không có bình luận nào"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:textColor="@color/blurblack"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rcView_commentLap"
+                android:layout_margin="15dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -11,6 +11,7 @@ data class ListLaptop(
     var amountRating : Int = 0,
     var amountSell : Int = 0,
     var nameBrand : String = "",
-    var amountInCart : Int = 1
+    var amountInCart : Int = 1,
+    var wasRated : Boolean = false
 ) {
 }

@@ -97,6 +97,8 @@ class Bill_Adapter(var context: Context, var listInvoice : ArrayList<Bill>) :Rec
             if (status.contains("Đã xác nhận",true)){
                 val intent = Intent(context,InvoiceAcceptedDetail_Activity::class.java)
                 intent.putExtra("idBill",invoiceWating.idBill)
+                intent.putExtra("sumPrice",invoiceWating.sumPrice)
+                intent.putExtra("addressOrder",invoiceWating.addressOrder)
                 context.startActivity(intent)
             }
 
