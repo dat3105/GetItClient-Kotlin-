@@ -394,9 +394,7 @@ class CommentLapActivity : AppCompatActivity() {
             val commentModel = param.getValue(CommentLap::class.java)
             if (commentModel != null) {
                 listCommentLap.add(commentModel)
-//                adapterCommentLap.setListCommentLapNew(listCommentLap)
                 tv_amountRatingAll_commentLap.text = "(${listCommentLap.size})"
-
             }
         }
     }

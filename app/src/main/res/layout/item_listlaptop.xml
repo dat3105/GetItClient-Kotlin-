@@ -48,6 +48,7 @@
             android:layout_centerInParent="true"
             android:scaleX="0.3"
             android:scaleY="0.3"
+            android:layout_marginHorizontal="5dp"
             android:stepSize="0.1" />
             <TextView
                 android:id="@+id/tv_priceLap_listLapItem"

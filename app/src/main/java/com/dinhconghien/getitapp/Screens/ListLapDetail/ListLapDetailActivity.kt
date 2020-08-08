@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,12 +17,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.dinhconghien.getitapp.Adapter.CommentLap_Adapter
 import com.dinhconghien.getitapp.Adapter.ListLaptop_Adapter
 import com.dinhconghien.getitapp.MainActivity
-import com.dinhconghien.getitapp.Models.BrandLapName
-import com.dinhconghien.getitapp.Models.Cart
-import com.dinhconghien.getitapp.Models.LaptopDetail
-import com.dinhconghien.getitapp.Models.ListLaptop
+import com.dinhconghien.getitapp.Models.*
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Comment.CommentLapActivity
 import com.dinhconghien.getitapp.Screens.ListLaptop.ListLaptopActivity
@@ -32,6 +31,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_comment_lap.*
 import kotlinx.android.synthetic.main.activity_list_lap_detail.*
 import kotlinx.coroutines.*
 
@@ -56,6 +56,10 @@ class ListLapDetailActivity : AppCompatActivity() {
     lateinit var job: Job
     lateinit var userID : String
     var listLapCheckCart = ArrayList<ListLaptop>()
+    val DB_COMMENTLAP = FirebaseDatabase.getInstance().getReference("commentLap")
+    var listCommentLap = ArrayList<CommentLap>()
+    lateinit var adapterCommentLap: CommentLap_Adapter
+    val TAG_COMMENT = "DbError_getComment_LISTLAPDETAIL"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -124,6 +128,40 @@ class ListLapDetailActivity : AppCompatActivity() {
         job.cancel()
     }
 
+    private fun getCommentItem(){
+
+    }
+
+    private fun getListComment(){
+        listCommentLap.clear()
+        DB_COMMENTLAP.orderByChild("idLap").equalTo(idLap)
+            .addListenerForSingleValueEvent(object : ValueEventListener{
+                @SuppressLint("LongLogTag")
+                override fun onCancelled(error: DatabaseError) {
+                   Log.d(TAG_COMMENT,error.toString())
+                }
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        for(param in snapshot.children){
+                            var commentModel = param.getValue(CommentLap::class.java)
+                            listCommentLap.add(commentModel!!)
+                            Log.d("Check listComment","${listCommentLap.size}")
+                        }
+                            linear_commentLap_listLapDetail.visibility = View.GONE
+                            rcView_commentLap_listLapDetail.visibility = View.VISIBLE
+                            adapterCommentLap = CommentLap_Adapter(listCommentLap,1)
+                            rcView_commentLap_listLapDetail.layoutManager =  LinearLayoutManager(this@ListLapDetailActivity, LinearLayoutManager.VERTICAL, false)
+                            rcView_commentLap_listLapDetail.setHasFixedSize(true)
+                            adapterCommentLap.setListCommentLapNew(listCommentLap)
+                            rcView_commentLap_listLapDetail.adapter = adapterCommentLap
+                    }else{
+                        linear_commentLap_listLapDetail.visibility = View.VISIBLE
+                        rcView_commentLap_listLapDetail.visibility = View.GONE
+                    }
+                }
+            })
+    }
+
     private fun showCustomDialog() {
         val viewGroup = findViewById<ViewGroup>(android.R.id.content)
         //then we will inflate the custom alert dialog xml that we created
@@ -156,7 +194,6 @@ class ListLapDetailActivity : AppCompatActivity() {
                 override fun onCancelled(error: DatabaseError) {
                     Log.d(TAG_GETLAPDETAIL, error.toString())
                 }
-
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (param in snapshot.children) {
                         val lapDetailModel = param.getValue(LaptopDetail::class.java)!!
@@ -188,6 +225,7 @@ class ListLapDetailActivity : AppCompatActivity() {
         setUpNameBrandUI()
         setUpLapDetailUI()
         getLapItem()
+        getListComment()
         dialogLoading.dismiss()
     }
 

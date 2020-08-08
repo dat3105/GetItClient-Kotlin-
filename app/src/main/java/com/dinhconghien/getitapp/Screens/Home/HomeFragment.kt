@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.dinhconghien.getitapp.Adapter.BrandLapName_Adapter
+import com.dinhconghien.getitapp.Adapter.ListLaptop_Adapter
 import com.dinhconghien.getitapp.Adapter.SliderImage_Adapter
 import com.dinhconghien.getitapp.Models.*
 import com.dinhconghien.getitapp.R
@@ -32,6 +33,7 @@ import com.google.firebase.database.ValueEventListener
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -47,17 +49,20 @@ class HomeFragment : Fragment() {
     lateinit var adapterBrandLap: BrandLapName_Adapter
     lateinit var reclerView_brandLap: RecyclerView
     lateinit var swipeRL: SwipeRefreshLayout
-    lateinit var tv_amountCart : TextView
+    lateinit var tv_amountCart: TextView
     var listBrandName = ArrayList<BrandLapName>()
     lateinit var imv_cart: ImageView
     val TAG = "Check HomeFragment 's Lifecycle"
     val listSliderTAG = "Check list Slider"
     var dbReference = FirebaseDatabase.getInstance().getReference("user")
     val DB_BRANDLAP = FirebaseDatabase.getInstance().getReference("brandLap")
+    val DB_LAP = FirebaseDatabase.getInstance().getReference("laptop")
     val DB_CART = FirebaseDatabase.getInstance().getReference("cart")
-    var listCart = ArrayList<Cart>()
     var listLapOrder = ArrayList<ListLaptop>()
-    lateinit var current_userID : String
+    var listLapHot = ArrayList<ListLaptop>()
+    var listLap5Star = ArrayList<ListLaptop>()
+    lateinit var adapterHotLap: ListLaptop_Adapter
+    lateinit var current_userID: String
 
     @SuppressLint("LongLogTag")
     override fun onCreateView(
@@ -86,6 +91,7 @@ class HomeFragment : Fragment() {
                 override fun onCancelled(error: DatabaseError) {
                     Log.d("DbErrorHome", error.toString())
                 }
+
                 @SuppressLint("SetTextI18n")
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user = snapshot.getValue(User::class.java)
@@ -117,6 +123,7 @@ class HomeFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) {
                 Log.d("DbErrorBrandHome", error.toString())
             }
+
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (param in snapshot.children) {
                     listBrandName.clear()
@@ -154,6 +161,7 @@ class HomeFragment : Fragment() {
         delay(800L)
         getBrandNameItem(view)
         checkListCart()
+        getLapHot(view)
         dialogLoading.dismiss()
     }
 
@@ -188,31 +196,33 @@ class HomeFragment : Fragment() {
         Log.d(listSliderTAG, "Current size is ${listImageSlider.size}")
     }
 
-    private fun checkListCart(){
-        if(listLapOrder.size > 0){
+    private fun checkListCart() {
+        if (listLapOrder.size > 0) {
             tv_amountCart.visibility = View.VISIBLE
             tv_amountCart.text = listLapOrder.size.toString()
-        }else{
+        } else {
             tv_amountCart.visibility = View.GONE
         }
     }
 
-    private fun getListCart(){
-        DB_CART.orderByChild("idUser").equalTo(current_userID).addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(error: DatabaseError) {
-                Log.d("DbError_getListCartHome",error.toString())
-            }
-            override fun onDataChange(snapshot: DataSnapshot) {
-                listLapOrder.clear()
-                getModelCart(snapshot)
-            }
-        })
+    private fun getListCart() {
+        DB_CART.orderByChild("idUser").equalTo(current_userID)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {
+                    Log.d("DbError_getListCartHome", error.toString())
+                }
+
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    listLapOrder.clear()
+                    getModelCart(snapshot)
+                }
+            })
     }
 
-    private fun getModelCart(snapShot: DataSnapshot){
-        for (param in snapShot.children){
+    private fun getModelCart(snapShot: DataSnapshot) {
+        for (param in snapShot.children) {
             val cartModel = param.getValue(Cart::class.java)
-            if (cartModel != null){
+            if (cartModel != null) {
                 listLapOrder = cartModel.listLapOrder
             }
         }
@@ -230,6 +240,41 @@ class HomeFragment : Fragment() {
         super.onStop()
         adapterImageSlider.deleteAllItem()
         Log.d(TAG, "onStop is being called !")
+    }
+
+    private fun getLapHot(view: View) {
+        DB_LAP.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                listLapHot.clear()
+                listLap5Star.clear()
+                for (param in snapshot.children) {
+                    val lapHotModel = param.getValue(ListLaptop::class.java)
+                    listLapHot.add(lapHotModel!!)
+                }
+                for (i in 0 until listLapHot.size) {
+                    if (listLapHot[i].rating == 5) {
+                        listLap5Star.add(listLapHot[i])
+                    }
+                }
+                if (listLap5Star.size == 0){
+                    tv_titleHot_homeScreen.visibility = View.GONE
+                    reclerView_itemHot_homeScreen.visibility = View.GONE
+                }else{
+                    tv_titleHot_homeScreen.visibility = View.VISIBLE
+                    reclerView_itemHot_homeScreen.visibility = View.VISIBLE
+                    adapterHotLap = ListLaptop_Adapter(view.context, listLap5Star)
+                    adapterHotLap.setListLapTop(listLap5Star)
+                    reclerView_itemHot_homeScreen.layoutManager =
+                        LinearLayoutManager(view.context, LinearLayoutManager.HORIZONTAL, false)
+                    reclerView_itemHot_homeScreen.adapter = adapterHotLap
+                }
+            }
+
+        })
     }
 
 }
