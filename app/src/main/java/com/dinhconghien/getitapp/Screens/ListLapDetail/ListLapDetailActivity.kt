@@ -150,7 +150,9 @@ class ListLapDetailActivity : AppCompatActivity() {
                             linear_commentLap_listLapDetail.visibility = View.GONE
                             rcView_commentLap_listLapDetail.visibility = View.VISIBLE
                             adapterCommentLap = CommentLap_Adapter(listCommentLap,1)
-                            rcView_commentLap_listLapDetail.layoutManager =  LinearLayoutManager(this@ListLapDetailActivity, LinearLayoutManager.VERTICAL, false)
+                            rcView_commentLap_listLapDetail.layoutManager =
+                                LinearLayoutManager(this@ListLapDetailActivity,
+                                    LinearLayoutManager.VERTICAL, true)
                             rcView_commentLap_listLapDetail.setHasFixedSize(true)
                             adapterCommentLap.setListCommentLapNew(listCommentLap)
                             rcView_commentLap_listLapDetail.adapter = adapterCommentLap

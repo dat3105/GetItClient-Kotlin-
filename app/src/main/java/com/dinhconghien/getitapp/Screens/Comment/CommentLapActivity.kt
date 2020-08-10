@@ -308,9 +308,10 @@ class CommentLapActivity : AppCompatActivity() {
     private fun setListCommentItem() {
         adapterCommentLap = CommentLap_Adapter(listCommentLap, 2)
         rcView_commentLap.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true)
         rcView_commentLap.setHasFixedSize(true)
         rcView_commentLap.adapter = adapterCommentLap
+        rcView_commentLap.scrollToPosition(listCommentLap.size -1)
     }
 
     private fun getListComment() {

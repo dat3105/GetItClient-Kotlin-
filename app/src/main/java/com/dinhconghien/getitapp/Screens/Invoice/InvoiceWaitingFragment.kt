@@ -51,7 +51,7 @@ class InvoiceWaitingFragment : Fragment() {
 
     private fun getInvoiceItem(view: View){
         adapterBill = Bill_Adapter(view.context,listInvoice)
-        rcView_invoiceWating.layoutManager = LinearLayoutManager(view.context,LinearLayoutManager.VERTICAL,false)
+        rcView_invoiceWating.layoutManager = LinearLayoutManager(view.context,LinearLayoutManager.VERTICAL,true)
         rcView_invoiceWating.setHasFixedSize(true)
         rcView_invoiceWating.adapter = adapterBill
         getBillWating()
@@ -84,6 +84,7 @@ class InvoiceWaitingFragment : Fragment() {
                     }
                 }
                 adapterBill.setListBill(listInvoice)
+                rcView_invoiceWating.scrollToPosition(listInvoice.size - 1)
             }
         }
     }

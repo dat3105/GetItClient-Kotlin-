@@ -55,7 +55,7 @@ class InvoiceAcceptedFragment : Fragment() {
     private fun getInvoiceItem(view: View){
         adapterBillAccepted = Bill_Adapter(view.context,listInvoice)
         rcView_invoiceAccepted.layoutManager = LinearLayoutManager(view.context,
-            LinearLayoutManager.VERTICAL,false)
+            LinearLayoutManager.VERTICAL,true)
         rcView_invoiceAccepted.setHasFixedSize(true)
         rcView_invoiceAccepted.adapter = adapterBillAccepted
         getBillAccepted()
@@ -87,6 +87,7 @@ class InvoiceAcceptedFragment : Fragment() {
                     }
                 }
                 adapterBillAccepted.setListBill(listInvoice)
+                rcView_invoiceAccepted.scrollToPosition(listInvoice.size -1)
             }
         }
     }
