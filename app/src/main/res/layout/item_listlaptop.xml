@@ -6,13 +6,16 @@
     app:cardCornerRadius="7dp"
     android:foreground="?android:attr/selectableItemBackground"
     android:clickable="true"
+    android:layout_gravity="center"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingBottom="15dp"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:padding="15dp"
         >
         <ImageView
             android:id="@+id/imv_avatarLap_listLapItem"
@@ -37,24 +40,23 @@
             android:textSize="12sp"
             />
 
-        <androidx.appcompat.widget.AppCompatRatingBar
-            android:id="@+id/ratingBar_listLapItem"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:isIndicator="true"
-            android:theme="@style/RatingBar"
-            android:layout_below="@+id/tv_nameLaptop_listLapItem"
-            android:layout_centerInParent="true"
-            android:scaleX="0.3"
-            android:scaleY="0.3"
-            android:layout_marginHorizontal="5dp"
-            android:stepSize="0.1" />
+<!--        <androidx.appcompat.widget.AppCompatRatingBar-->
+<!--            android:id="@+id/ratingBar_listLapItem"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:isIndicator="true"-->
+<!--            android:theme="@style/RatingBar"-->
+<!--            android:layout_below="@+id/tv_nameLaptop_listLapItem"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:numStars="5"-->
+<!--            android:scaleY="0.3"-->
+<!--            android:scaleX="0.3"-->
+<!--            android:rating="5"/>-->
             <TextView
                 android:id="@+id/tv_priceLap_listLapItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ratingBar_listLapItem"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/robotoregular"
@@ -70,13 +72,12 @@
                 android:layout_below="@id/tv_priceLap_listLapItem"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/robotoregular"
                 android:textColor="@color/black"
                 android:text="SỐ lượng : 28 chiếc"
                 android:textStyle="normal"
                 android:textSize="8sp"
                 />
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

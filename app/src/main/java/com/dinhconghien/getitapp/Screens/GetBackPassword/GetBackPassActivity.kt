@@ -85,7 +85,7 @@ class GetBackPassActivity : AppCompatActivity() {
                 if (password == "") {
                     CustomToast.makeText(
                         this@GetBackPassActivity,
-                        "Thông tin đéo đúng nhé",
+                        "Sai thông tin",
                         Toast.LENGTH_LONG,
                         3
                     )?.show()

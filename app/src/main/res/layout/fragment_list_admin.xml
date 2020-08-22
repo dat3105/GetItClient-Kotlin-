@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/mybackground"
     android:id="@+id/swipeRL_listAdminFragment"
+    android:paddingBottom="40dp"
     tools:context=".Screens.Message.ListAdminFragment">
 
     <ScrollView

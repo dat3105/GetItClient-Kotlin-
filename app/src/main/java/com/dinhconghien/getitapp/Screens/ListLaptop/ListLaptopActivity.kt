@@ -90,6 +90,7 @@ class ListLaptopActivity : AppCompatActivity() {
                 dsLap.clear()
               getLapModel(snapshot)
                 adapterListLap.setListLapTop(dsLap)
+                rcView_listLapScreen.scrollToPosition(dsLap.size - 1)
             }
 
         })
@@ -118,7 +119,7 @@ class ListLaptopActivity : AppCompatActivity() {
 
     private fun getLapItem() {
         val gridLayoutManager =
-            GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
+           GridLayoutManager(this,2,LinearLayoutManager.VERTICAL,false)
         rcView_listLapScreen.layoutManager = gridLayoutManager
         rcView_listLapScreen.setHasFixedSize(true)
         getLap()

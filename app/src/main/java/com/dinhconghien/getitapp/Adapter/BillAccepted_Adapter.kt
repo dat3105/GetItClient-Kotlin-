@@ -16,7 +16,8 @@ import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Invoice.CommentActivity
 import com.dinhconghien.getitapp.UI.CustomToast
 
-class BillAccepted_Adapter( var listInvoice : ArrayList<ListLaptop>) : RecyclerView.Adapter<BillAccepted_Adapter.ViewHolder>(){
+class BillAccepted_Adapter( var listInvoice : ArrayList<ListLaptop>)
+    : RecyclerView.Adapter<BillAccepted_Adapter.ViewHolder>(){
     var listener : OnItemClickedListener? = null
     fun setListBillAccep(listInvoice: ArrayList<ListLaptop>){
         this.listInvoice = listInvoice

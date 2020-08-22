@@ -35,6 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/rcView_listLapScreen"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:layout_marginHorizontal="15dp"
             />
     </LinearLayout>

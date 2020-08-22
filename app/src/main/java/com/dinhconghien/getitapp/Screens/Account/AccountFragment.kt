@@ -1,11 +1,9 @@
 package com.dinhconghien.getitapp.Screens.Account
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -21,9 +19,10 @@ import com.dinhconghien.getitapp.Models.User
 import com.dinhconghien.getitapp.R
 import com.dinhconghien.getitapp.Screens.Login.LoginActivity
 import com.dinhconghien.getitapp.Utils.SharePreference_Utils
-import com.google.firebase.database.*
-import kotlinx.coroutines.*
-import java.lang.Exception
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class AccountFragment : Fragment()  {
@@ -64,9 +63,10 @@ class AccountFragment : Fragment()  {
             startActivity(intent)
         }
 
-        btnShareApp.setOnClickListener {  }
+        btnShareApp.setOnClickListener {
+            actionShare()
+        }
 
-        btnNoti.setOnClickListener {  }
 
         return view
     }
@@ -77,10 +77,21 @@ class AccountFragment : Fragment()  {
         tvEmail = view.findViewById(R.id.tv_email_accountScreen)
         tvphoneNum = view.findViewById(R.id.tv_phone_accountScreen)
         btnEdit = view.findViewById(R.id.linear_editaccountScreen)
-        btnNoti = view.findViewById(R.id.linear_noti_accountscreen)
         btnShareApp = view.findViewById(R.id.linear_shareApp_accountSceen)
         btnAboutUs = view.findViewById(R.id.linear_aboutUs_accountScreen)
         btnLogout = view.findViewById(R.id.linear_logOut_accountScreen)
+    }
+
+    private fun actionShare() {
+        try {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            val url = "https://appurl.io/kFN2UWjUF"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, url)
+            startActivity(Intent.createChooser(shareIntent, "Chọn 1 ứng dụng"))
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun showCustomDialog(view: View) {

@@ -70,7 +70,7 @@ class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLapt
             .fitCenter()
             .into(holder.imv_avaLap)
 
-        holder.ratingLap.rating = listLapItem.rating.toFloat()
+//        holder.ratingLap.rating = listLapItem.rating.toFloat()
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ListLapDetailActivity::class.java)
@@ -85,7 +85,7 @@ class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLapt
         val tv_nameLap : TextView = itemView.findViewById(R.id.tv_nameLaptop_listLapItem)
         val tv_priceLap : TextView = itemView.findViewById(R.id.tv_priceLap_listLapItem)
         val tv_amountLap : TextView = itemView.findViewById(R.id.tv_amountLap_listLapItem)
-        val ratingLap : androidx.appcompat.widget.AppCompatRatingBar = itemView.findViewById(R.id.ratingBar_listLapItem)
+//        val ratingLap : androidx.appcompat.widget.AppCompatRatingBar = itemView.findViewById(R.id.ratingBar_listLapItem)
     }
 
 
