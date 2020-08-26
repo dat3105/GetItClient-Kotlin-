@@ -128,10 +128,6 @@ class ListLapDetailActivity : AppCompatActivity() {
         job.cancel()
     }
 
-    private fun getCommentItem(){
-
-    }
-
     private fun getListComment(){
         listCommentLap.clear()
         DB_COMMENTLAP.orderByChild("idLap").equalTo(idLap)
@@ -162,7 +158,8 @@ class ListLapDetailActivity : AppCompatActivity() {
                     }
                 }
             })
-    }
+    }// truy vấn lên bảng comment để xem laptop này có phần comment không,nếu không hiển thị giao diện không có comment,
+    //nếu có thì lấy model truyền vào arraylist và truyền vào giao diện nhưng chỉ hiển thị 1 item
 
     private fun showCustomDialog() {
         val viewGroup = findViewById<ViewGroup>(android.R.id.content)
@@ -216,7 +213,7 @@ class ListLapDetailActivity : AppCompatActivity() {
         alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         alertDialog.setCanceledOnTouchOutside(false)
         alertDialog.show()
-    }
+    }//truy vấn lên bảng laptopDetail theo idLap để lấy info và hiển thị lên giao diện ở dialog
 
     @SuppressLint("SetTextI18n")
     suspend fun initUI() {
@@ -277,7 +274,8 @@ class ListLapDetailActivity : AppCompatActivity() {
                 }
 
             })
-    }
+    }//truy vấn lên bảng laptop theo idLap đã được truyền từ item laptop ở màn listLaptopActivity để cập nhật giao diện của
+
 
     private fun setUpLapDetailUI() {
         DB_LAPDETAIL.orderByChild("idLap").equalTo(idLap)
@@ -295,7 +293,7 @@ class ListLapDetailActivity : AppCompatActivity() {
                     }
                 }
             })
-    }
+    }// truy vấn lên bảng laptopDetail theo idLap để cập nhật lên giao diện
 
     private fun setUpNameBrandUI() {
         DB_BRANDLAP.orderByChild("idBrandLap").equalTo(idBrandLap)
@@ -313,7 +311,7 @@ class ListLapDetailActivity : AppCompatActivity() {
                 }
 
             })
-    }
+    }//truy vấn lên bảng brandLap để lấy tên loại laptop để cập nhật lên UI
 
     private fun getLapItem() {
         adapterListLap = ListLaptop_Adapter(this, dsLap)
@@ -323,7 +321,7 @@ class ListLapDetailActivity : AppCompatActivity() {
         rcView_sameType_listLapDetailScreen.setHasFixedSize(true)
         getLap()
         rcView_sameType_listLapDetailScreen.adapter = adapterListLap
-    }
+    }//cập nhật listLaptop cùng loại lên giao diện
 
     private fun getLap() {
         idBrandLap = intent.getStringExtra("idBrandLap")
@@ -340,7 +338,7 @@ class ListLapDetailActivity : AppCompatActivity() {
                 }
 
             })
-    }
+    }// truy vấn lên bảng laptop theo idBrandLap để lấy model truyền vào arrayList
 
     private fun getLapModel(snapshot: DataSnapshot) {
         for (param in snapshot.children) {
@@ -373,7 +371,8 @@ class ListLapDetailActivity : AppCompatActivity() {
             }
         }
 
-    }
+    }//thêm sản phẩm vào giỏ hàng,kiểm tra xem số lượng sản phẩm có lớn hơn 0 hay không,nếu có thì thêm vào,
+    //nếu không thì báo là sản phẩm hết hàng
 
     private fun checkIDLapForCart() : String{
         var noti = "Thêm sản phẩm thành công"
@@ -383,7 +382,7 @@ class ListLapDetailActivity : AppCompatActivity() {
             }
         }
         return noti
-    }
+    }//kiểm tra xem sản phẩm đã được thêm vào giỏ hàng hay chưa theo idLap
 
     private fun getLapModelForCart(snapshot: DataSnapshot){
         for(param in snapshot.children){
@@ -402,7 +401,7 @@ class ListLapDetailActivity : AppCompatActivity() {
                 getLapModelForCheck(snapshot)
             }
         })
-    }
+    }//truy vấn lên bảng cart để lấy listLapOrder để kiểm tra xem trong giỏ hàng có sản phẩm hay chưa
 
     private fun getLapModelForCheck(snapshot: DataSnapshot){
         for (param in snapshot.children){
@@ -424,6 +423,7 @@ class ListLapDetailActivity : AppCompatActivity() {
                 getLapModelForCart(snapshot)
             }
         })
-    }
+    } //truy vấn lên bảng laptop theo idLap đê lấy model truyền vào arrayList và nếu người dùng có thêm sản phẩm này vào giỏ hàng,
+    //và sản phẩm chưa có trong giỏ hàng thì list sản phẩm cũ (listLapForCheck) sẽ add thêm listLapCart vào để cập nhật lên database
 
 }

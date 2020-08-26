@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
     var dbReference = FirebaseDatabase.getInstance().getReference().child("user")
     var listUser = ArrayList<User>()
     var listUserKey = ArrayList<String>()
-//     lateinit var user : User
+
     lateinit var job: Job
     var TAG = "Check user login"
 
@@ -162,7 +162,7 @@ class LoginActivity : AppCompatActivity() {
             return false
         }
         return true
-    }
+    }//kiểm tra định dạng email,kiểm tra không được để khoảng trắng, không được để trống
 
     fun getUser(snapShot: DataSnapshot) {
         for (param in snapShot.children) {
@@ -188,7 +188,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         return noti
-    }
+    } //kiểm tra xem email và laptop có được đăng kí chưa,nếu đã đăng kí thì kiểm tra xem tài khoản có
+    //đăng nhập chưa
 
     private fun checkSession() {
         //check if user is logged in
@@ -201,7 +202,8 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
+    }// khi vô app ,nếu tài khoản đã được đăng nhập từ trước thì sẽ lưu idUser vào share reference và check
+    //nếu có idUser thì sẽ cho vào thẳng app không cần đăng nhập lại
 
 }
 

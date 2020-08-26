@@ -64,7 +64,8 @@ class GetBackPassActivity : AppCompatActivity() {
             })
         }
         Log.d(TAG,"Size of listUser of onStart :${listUser.size}")
-    }
+    }// truy vấn lên bảng user để lấy model và chuyển xuống arraylist
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -136,7 +137,7 @@ class GetBackPassActivity : AppCompatActivity() {
             return false
         }
         return true
-    }
+    } //check xem có để trống ,để khoảng trắng,định dạng email,số điện thoại phải đủ 10 số
 
     fun getUser(snapShot: DataSnapshot) {
         for (param in snapShot.children) {
@@ -154,6 +155,6 @@ class GetBackPassActivity : AppCompatActivity() {
                 }
             }
         return password
-    }
+    } //check xem email và số điện thoại xem có chính xác không
 
 }

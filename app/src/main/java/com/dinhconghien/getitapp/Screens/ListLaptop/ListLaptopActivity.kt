@@ -94,7 +94,8 @@ class ListLaptopActivity : AppCompatActivity() {
             }
 
         })
-    }
+    }// truy vấn lên bảng laptop vào theo idBrandLap để lấy laptop theo loại
+    //laptop
 
     private fun getTitleBrand(){
         DB_BRANDLAP.orderByChild("idBrandLap").equalTo(idBrandLap).addListenerForSingleValueEvent(object : ValueEventListener{
@@ -108,7 +109,7 @@ class ListLaptopActivity : AppCompatActivity() {
                 }
             }
         })
-    }
+    }// truy vấn lên bảng brandLap để cập nhật loại laptop lên title toolbar
 
     fun getLapModel(snapshot: DataSnapshot){
         for (param in snapshot.children){
@@ -124,6 +125,6 @@ class ListLaptopActivity : AppCompatActivity() {
         rcView_listLapScreen.setHasFixedSize(true)
         getLap()
         rcView_listLapScreen.adapter = adapterListLap
-    }
+    }//cập nhật list laptop theo loại laptop lên giao diện
 
 }

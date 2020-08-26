@@ -47,7 +47,7 @@ class InvoiceWaitingFragment : Fragment() {
         swipeRL_bill = view.findViewById(R.id.swipeRL_billWatingScreen)
         val utils = SharePreference_Utils(view.context)
         idUser = utils.getSession()
-    }
+    }//ánh xạ
 
     private fun getInvoiceItem(view: View){
         adapterBill = Bill_Adapter(view.context,listInvoice)
@@ -55,7 +55,7 @@ class InvoiceWaitingFragment : Fragment() {
         rcView_invoiceWating.setHasFixedSize(true)
         rcView_invoiceWating.adapter = adapterBill
         getBillWating()
-    }
+    }//cập nhật list bill ở status Đang chờ xác nhận để cập nhật lên giao diện
 
 
     private fun getBillWating(){
@@ -71,7 +71,7 @@ class InvoiceWaitingFragment : Fragment() {
                 }
 
             })
-    }
+    }// truy vấn lên bảng  bill theo idUser để lấy model truyền vào arrayList
 
     private fun getBillModel(snapshot: DataSnapshot){
         for(param in snapshot.children){

@@ -134,7 +134,7 @@ class HomeFragment : Fragment() {
                 }
             }
         })
-    }
+    }//
 
 
     fun getBrandModel(snapShot: DataSnapshot) {
@@ -153,7 +153,7 @@ class HomeFragment : Fragment() {
         sliderView.scrollTimeInSec = 3
         sliderView.isAutoCycle = true
         sliderView.startAutoCycle()
-    }
+    } //khởi tạo hình cho slideshow
 
     suspend fun updateUI(view: View) {
         val dialogLoading = DialogLoading(view.context)
@@ -173,7 +173,7 @@ class HomeFragment : Fragment() {
         reclerView_brandLap.setHasFixedSize(true)
         getBrand()
         reclerView_brandLap.adapter = adapterBrandLap
-    }
+    }//truy vấn lên database bảng brandLap lấy model truyền vào arrayList để cập nhật lên giao diện
 
     private fun addImageSliderItems() {
         val sliderImage = SliderImage(R.drawable.laptopmacbook_slider, "Laptop Macbook Pro")
@@ -203,7 +203,7 @@ class HomeFragment : Fragment() {
         } else {
             tv_amountCart.visibility = View.GONE
         }
-    }
+    }// kiểm tra xem trong giỏ hàng có sản phẩm không.,nếu có sẽ hiển thị số sản phẩm trong giỏ hàng
 
     private fun getListCart() {
         DB_CART.orderByChild("idUser").equalTo(current_userID)
@@ -217,7 +217,7 @@ class HomeFragment : Fragment() {
                     getModelCart(snapshot)
                 }
             })
-    }
+    }//truy vấn lên bảng cart để lấy model và truyền vào arrayList để kiểm tra có sản phẩm trong giỏ hàng không
 
     private fun getModelCart(snapShot: DataSnapshot) {
         for (param in snapShot.children) {
@@ -275,6 +275,7 @@ class HomeFragment : Fragment() {
             }
 
         })
-    }
+    } //truy vấn lên bảng laptop và kiểm tra xem sản phẩm có được 5 sao không,nếu có sẽ lấy model và truyền vào arraylist và
+    //cập nhật giao diện lên UI
 
 }

@@ -49,7 +49,7 @@ class InvoiceAcceptedFragment : Fragment() {
         swipeRL_bill = view.findViewById(R.id.swipeRL_billAcceptedScreen)
         val utils = SharePreference_Utils(view.context)
         idUser = utils.getSession()
-    }
+    }// 
 
 
     private fun getInvoiceItem(view: View){

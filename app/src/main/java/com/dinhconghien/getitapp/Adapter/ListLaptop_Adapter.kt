@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.widget.AppCompatRatingBar
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dinhconghien.getitapp.Models.BrandLapName
@@ -70,7 +71,7 @@ class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLapt
             .fitCenter()
             .into(holder.imv_avaLap)
 
-//        holder.ratingLap.rating = listLapItem.rating.toFloat()
+        holder.ratingLap.rating = listLapItem.rating.toFloat()
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ListLapDetailActivity::class.java)
@@ -85,7 +86,7 @@ class ListLaptop_Adapter(var context: Context , var listLap : ArrayList<ListLapt
         val tv_nameLap : TextView = itemView.findViewById(R.id.tv_nameLaptop_listLapItem)
         val tv_priceLap : TextView = itemView.findViewById(R.id.tv_priceLap_listLapItem)
         val tv_amountLap : TextView = itemView.findViewById(R.id.tv_amountLap_listLapItem)
-//        val ratingLap : androidx.appcompat.widget.AppCompatRatingBar = itemView.findViewById(R.id.ratingBar_listLapItem)
+        val ratingLap : AppCompatRatingBar = itemView.findViewById(R.id.ratingBar_listLapItem)
     }
 
 

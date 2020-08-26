@@ -36,8 +36,7 @@ class RegisterActivity : AppCompatActivity() {
    var user: User =User()
     var dialogLoading: DialogLoading? = null
     lateinit var job: Job
-    var avaUser = "no information"
-    var userAddress = "no information"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -108,7 +107,8 @@ class RegisterActivity : AppCompatActivity() {
         } else {
             checkDuplcateEmail(email, phone, userName, password)
         }
-    }
+    }// kiểm tra form đăng kí,check không được để trống,không được để khoảng tráng ở đầu và cuối
+    // ,check form email,số điện thoại phải lớn hơn 10
 
 
     fun checkDuplcateEmail(
@@ -167,5 +167,6 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
             })
-    }
+    }// check trùng email,sử dụng hàm support của firebase là orderbychild (truy vấn theo thuộc tính có trong database) và hàm exist
+    // để check xem email đã đăng kí chưa
 }
