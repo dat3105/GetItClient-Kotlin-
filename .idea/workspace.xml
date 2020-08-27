@@ -28,21 +28,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ListLaptop_Adapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Adapter/ListLaptop_Adapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/GetBackPassword/GetBackPassActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/GetBackPassword/GetBackPassActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Home/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Home/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceAcceptedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceAcceptedFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceWaitingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Invoice/InvoiceWaitingFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLapDetail/ListLapDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLapDetail/ListLapDetailActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLaptop/ListLaptopActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/ListLaptop/ListLaptopActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Login/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Login/LoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Register/RegisterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Register/RegisterActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_listlaptop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_listlaptop.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Message/RoomChatFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dinhconghien/getitapp/Screens/Message/RoomChatFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +81,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="2c821230" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-31T07:58:00.026Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-08-27T05:30:56.177Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
